@@ -18271,6 +18271,16 @@
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
+        "moduleName": "FinvuSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
         "moduleName": "FinvuSDK"
       },
       {
@@ -20335,16 +20345,6 @@
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
-        "moduleName": "FinvuSDK",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
         "moduleName": "FinvuSDK"
       },
       {
@@ -20795,14 +20795,14 @@
     {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/models\/Base.swift",
       "kind": "StringLiteral",
-      "offset": 796,
+      "offset": 818,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/models\/Base.swift",
       "kind": "BooleanLiteral",
-      "offset": 821,
+      "offset": 843,
       "length": 5,
       "value": "false"
     },
@@ -21710,48 +21710,6 @@
       "value": "\"https:\/\/api.rebit.org.in\/aa\/purpose\/105.xml\""
     },
     {
-      "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/utils\/FinvuLoggerUtils.swift",
-      "kind": "StringLiteral",
-      "offset": 179,
-      "length": 10,
-      "value": "\"FinvuSDK\""
-    },
-    {
-      "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/utils\/FinvuLoggerUtils.swift",
-      "kind": "StringLiteral",
-      "offset": 277,
-      "length": 21,
-      "value": "\"websocketNetworking\""
-    },
-    {
-      "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/utils\/FinvuLoggerUtils.swift",
-      "kind": "StringLiteral",
-      "offset": 378,
-      "length": 8,
-      "value": "\"Crypto\""
-    },
-    {
-      "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Client\/Classes\/FinvuManager.swift",
-      "kind": "BooleanLiteral",
-      "offset": 15655,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/FinvuNetworkingManager.swift",
-      "kind": "BooleanLiteral",
-      "offset": 421,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/FinvuNetworkingManager.swift",
-      "kind": "BooleanLiteral",
-      "offset": 468,
-      "length": 5,
-      "value": "false"
-    },
-    {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/FinvuConstatns.swift",
       "kind": "StringLiteral",
       "offset": 242,
@@ -22422,6 +22380,48 @@
       "offset": 5750,
       "length": 18,
       "value": "\"RECORD-NOT-FOUND\""
+    },
+    {
+      "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/utils\/FinvuLoggerUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 179,
+      "length": 10,
+      "value": "\"FinvuSDK\""
+    },
+    {
+      "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/utils\/FinvuLoggerUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 277,
+      "length": 21,
+      "value": "\"websocketNetworking\""
+    },
+    {
+      "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/utils\/FinvuLoggerUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 378,
+      "length": 8,
+      "value": "\"Crypto\""
+    },
+    {
+      "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Client\/Classes\/FinvuManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 15655,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/FinvuNetworkingManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 421,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/FinvuNetworkingManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 468,
+      "length": 5,
+      "value": "false"
     },
     {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/FinvuRequestsManager.swift",
