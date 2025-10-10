@@ -8,9 +8,20 @@ import OSLog
 import Starscream
 import Swift
 import TrustKit
+import UIKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+import os.log
+import os
+@objc(FinvuSnaAuthSuccessResponse) @objcMembers final public class FinvuSnaAuthSuccessResponse : ObjectiveC.NSObject {
+  @objc final public let status: Swift.String
+  @objc final public let statusCode: Swift.String
+  @objc final public let authType: Swift.String?
+  @objc final public let token: Swift.String?
+  @objc public init(status: Swift.String, statusCode: Swift.String, authType: Swift.String?, token: Swift.String?)
+  @objc deinit
+}
 public enum AccountConsentFetchType : Swift.String {
   case oneTime
   case periodic
@@ -85,8 +96,28 @@ public enum ConsentFiType : Swift.String, Swift.CaseIterable {
     get
   }
 }
+extension Foundation.NSError {
+  public static func finvuError(code: FinvuSDK.FinvuErrorCode, message: Swift.String?, userInfo: [Swift.String : Any]? = nil) -> Foundation.NSError
+}
 public typealias CompletionHandlerWithData<T> = (T?, Foundation.NSError?) -> Swift.Void where T : ObjectiveC.NSObject
 public typealias CompletionHandler = (Foundation.NSError?) -> Swift.Void
+public enum FinvuErrorCode : Swift.Int {
+  case authLoginRetry
+  case authLoginFailed
+  case authForgotPasscodeFailed
+  case authLoginVerifyMobileNumber
+  case authForgotHandleFailed
+  case sessionDisconnected
+  case sslPinningFailureError
+  case recordNotFound
+  case logout
+  case genericError
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 @objc(FinvuConsentReport) @objcMembers final public class ConsentReport : ObjectiveC.NSObject {
   @objc final public let report: Swift.String
   @objc public init(report: Swift.String)
@@ -104,7 +135,9 @@ public typealias CompletionHandler = (Foundation.NSError?) -> Swift.Void
 }
 @objc(FinvuLoginOtpReference) @objcMembers final public class LoginOtpReference : ObjectiveC.NSObject {
   @objc final public let reference: Swift.String
-  @objc public init(reference: Swift.String)
+  @objc final public let snaToken: Swift.String?
+  @objc final public let authType: Swift.String?
+  @objc public init(reference: Swift.String, snaToken: Swift.String?, authType: Swift.String?)
   @objc deinit
 }
 @objc(FinvuLoginResponse) @objcMembers final public class FinvuLoginResponse : ObjectiveC.NSObject {
@@ -431,6 +464,12 @@ public typealias CompletionHandler = (Foundation.NSError?) -> Swift.Void
 @objc public protocol FinvuConfig {
   @objc var finvuEndpoint: Foundation.URL { get }
   @objc var certificatePins: [Swift.String]? { get }
+  @objc var finvuSnaAuthConfig: FinvuSDK.FinvuSnaAuthConfig? { get }
+}
+public struct FinvuErrorMessages {
+  public static let snaAuthenticationFailed: Swift.String
+  public static let snaAuthenticationCancelled: Swift.String
+  public static let snaAuthenticationTimeout: Swift.String
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc final public class FinvuManager : ObjectiveC.NSObject {
   @objc public static var shared: FinvuSDK.FinvuManager
@@ -461,6 +500,54 @@ public typealias CompletionHandler = (Foundation.NSError?) -> Swift.Void
   @objc final public func logout(completion: @escaping FinvuSDK.CompletionHandler)
   @objc deinit
 }
+@objc public class FinvuSnaAuthConfig : ObjectiveC.NSObject {
+  @objc final public let environment: FinvuSDK.FinvuEnvironment
+  @objc final public let viewController: UIKit.UIViewController
+  @objc public init(environment: FinvuSDK.FinvuEnvironment, viewController: UIKit.UIViewController)
+  @objc deinit
+}
+@objc public enum FinvuEnvironment : Swift.Int {
+  case uat = 0
+  case production = 1
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public protocol FinvuSnaAuthProvider {
+  @objc func isAvailable() -> Swift.Bool
+  @objc func setup(config: FinvuSDK.FinvuSnaAuthConfig?, phone: Swift.String)
+  @objc func performSna(authMeta: [Swift.String : Any]?, completion: @escaping FinvuSDK.CompletionHandlerWithData<FinvuSDK.FinvuSnaAuthSuccessResponse>)
+  @objc func cancel()
+  @objc func onDestroy()
+}
+@_inheritsConvenienceInitializers @objc public class FinvuSnaAuthProviderNoop : ObjectiveC.NSObject, FinvuSDK.FinvuSnaAuthProvider {
+  @objc override dynamic public init()
+  @objc public func isAvailable() -> Swift.Bool
+  @objc public func setup(config: FinvuSDK.FinvuSnaAuthConfig?, phone: Swift.String)
+  @objc public func performSna(authMeta: [Swift.String : Any]?, completion: @escaping FinvuSDK.CompletionHandlerWithData<FinvuSDK.FinvuSnaAuthSuccessResponse>)
+  @objc public func cancel()
+  @objc public func onDestroy()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class FinvuSnaAuthProviderRegistry : ObjectiveC.NSObject {
+  @objc public static let shared: FinvuSDK.FinvuSnaAuthProviderRegistry
+  @objc public func register(provider: any FinvuSDK.FinvuSnaAuthProvider)
+  @objc public func getAvailableProvider() -> (any FinvuSDK.FinvuSnaAuthProvider)?
+  @objc public func getAllProviders() -> [any FinvuSDK.FinvuSnaAuthProvider]
+  @objc public func ensureProviderSetup(config: FinvuSDK.FinvuSnaAuthConfig?, phone: Swift.String)
+  @objc deinit
+}
+@objc(FinvuSnaResult) @objcMembers final public class FinvuSnaResult : ObjectiveC.NSObject {
+  @objc final public let token: Swift.String?
+  @objc final public let success: Swift.Bool
+  @objc final public let errorMessage: Swift.String?
+  @objc public init(token: Swift.String?, success: Swift.Bool, errorMessage: Swift.String? = nil)
+  @objc public static func success(token: Swift.String?) -> FinvuSDK.FinvuSnaResult
+  @objc public static func failure(errorMessage: Swift.String) -> FinvuSDK.FinvuSnaResult
+  @objc deinit
+}
 extension FinvuSDK.AccountConsentFetchType : Swift.Equatable {}
 extension FinvuSDK.AccountConsentFetchType : Swift.Hashable {}
 extension FinvuSDK.AccountConsentFetchType : Swift.RawRepresentable {}
@@ -476,3 +563,9 @@ extension FinvuSDK.ConsentType : Swift.RawRepresentable {}
 extension FinvuSDK.ConsentFiType : Swift.Equatable {}
 extension FinvuSDK.ConsentFiType : Swift.Hashable {}
 extension FinvuSDK.ConsentFiType : Swift.RawRepresentable {}
+extension FinvuSDK.FinvuErrorCode : Swift.Equatable {}
+extension FinvuSDK.FinvuErrorCode : Swift.Hashable {}
+extension FinvuSDK.FinvuErrorCode : Swift.RawRepresentable {}
+extension FinvuSDK.FinvuEnvironment : Swift.Equatable {}
+extension FinvuSDK.FinvuEnvironment : Swift.Hashable {}
+extension FinvuSDK.FinvuEnvironment : Swift.RawRepresentable {}
