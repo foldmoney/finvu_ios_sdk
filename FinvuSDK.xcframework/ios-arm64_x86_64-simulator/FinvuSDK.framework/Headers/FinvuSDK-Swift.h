@@ -601,11 +601,13 @@ SWIFT_CLASS_NAMED("FinancialInformationEntityInfo")
 @end
 
 @class NSURL;
+@class FinvuSnaAuthConfig;
 
 SWIFT_PROTOCOL("_TtP8FinvuSDK11FinvuConfig_")
 @protocol FinvuConfig
 @property (nonatomic, readonly, copy) NSURL * _Nonnull finvuEndpoint;
 @property (nonatomic, readonly, copy) NSArray<NSString *> * _Nullable certificatePins;
+@property (nonatomic, readonly, strong) FinvuSnaAuthConfig * _Nullable finvuSnaAuthConfig;
 @end
 
 
@@ -626,6 +628,12 @@ SWIFT_CLASS_NAMED("FinvuDeviceBinding")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
+/// Environment enum for SNA configuration
+typedef SWIFT_ENUM(NSInteger, FinvuEnvironment, open) {
+  FinvuEnvironmentUat = 0,
+  FinvuEnvironmentProduction = 1,
+};
 
 
 SWIFT_CLASS_NAMED("FinvuLoginResponse")
@@ -674,6 +682,96 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) FinvuManager * _Nonnul
 - (void)fetchFIPDetailsWithFipId:(NSString * _Nonnull)fipId completion:(void (^ _Nonnull)(FinvuFIPDetails * _Nullable, NSError * _Nullable))completion;
 - (void)getEntityInfoWithEntityId:(NSString * _Nonnull)entityId entityType:(NSString * _Nonnull)entityType completion:(void (^ _Nonnull)(FinvuEntityInfo * _Nullable, NSError * _Nullable))completion;
 - (void)logoutWithCompletion:(void (^ _Nonnull)(NSError * _Nullable))completion;
+@end
+
+@class UIViewController;
+
+/// SNA Authentication Configuration
+SWIFT_CLASS("_TtC8FinvuSDK18FinvuSnaAuthConfig")
+@interface FinvuSnaAuthConfig : NSObject
+@property (nonatomic, readonly) enum FinvuEnvironment environment;
+@property (nonatomic, readonly, strong) UIViewController * _Nonnull viewController;
+- (nonnull instancetype)initWithEnvironment:(enum FinvuEnvironment)environment viewController:(UIViewController * _Nonnull)viewController OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class FinvuSnaAuthSuccessResponse;
+
+/// Protocol for SNA (Seamless Native Authentication) providers
+SWIFT_PROTOCOL("_TtP8FinvuSDK20FinvuSnaAuthProvider_")
+@protocol FinvuSnaAuthProvider
+/// Return true if the provider is available in runtime (e.g., adapter module present and setup done).
+/// This should be a fast check.
+- (BOOL)isAvailable SWIFT_WARN_UNUSED_RESULT;
+/// Optional setup call. Called by core before any SNA operation.
+/// Implementers may choose to initialize native wrappers here. Should be fast.
+- (void)setupWithConfig:(FinvuSnaAuthConfig * _Nullable)config phone:(NSString * _Nonnull)phone;
+/// Perform SNA authentication and return a token (or nil) as Result.
+/// \param authMeta Authentication metadata
+///
+/// \param completion Completion handler with Result<String?>
+///
+- (void)performSnaWithAuthMeta:(NSDictionary<NSString *, id> * _Nullable)authMeta completion:(void (^ _Nonnull)(FinvuSnaAuthSuccessResponse * _Nullable, NSError * _Nullable))completion;
+- (void)cancel;
+/// Cleanup resources when the provider is no longer needed.
+- (void)onDestroy;
+@end
+
+
+/// Dummy SNA provider that does nothing - used when SNAAdapter is not available
+/// This matches the Android SDK’s NoopFinvuSnaAuthProvider behavior
+SWIFT_CLASS("_TtC8FinvuSDK24FinvuSnaAuthProviderNoop")
+@interface FinvuSnaAuthProviderNoop : NSObject <FinvuSnaAuthProvider>
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (BOOL)isAvailable SWIFT_WARN_UNUSED_RESULT;
+- (void)setupWithConfig:(FinvuSnaAuthConfig * _Nullable)config phone:(NSString * _Nonnull)phone;
+- (void)performSnaWithAuthMeta:(NSDictionary<NSString *, id> * _Nullable)authMeta completion:(void (^ _Nonnull)(FinvuSnaAuthSuccessResponse * _Nullable, NSError * _Nullable))completion;
+- (void)cancel;
+- (void)onDestroy;
+@end
+
+
+/// Registry for SNA authentication providers
+SWIFT_CLASS("_TtC8FinvuSDK28FinvuSnaAuthProviderRegistry")
+@interface FinvuSnaAuthProviderRegistry : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) FinvuSnaAuthProviderRegistry * _Nonnull shared;)
++ (FinvuSnaAuthProviderRegistry * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+- (void)registerWithProvider:(id <FinvuSnaAuthProvider> _Nonnull)provider;
+- (id <FinvuSnaAuthProvider> _Nullable)getAvailableProvider SWIFT_WARN_UNUSED_RESULT;
+- (NSArray<id <FinvuSnaAuthProvider>> * _Nonnull)getAllProviders SWIFT_WARN_UNUSED_RESULT;
+/// Helper to call setupIfNeeded safely on Main (optional).
+- (void)ensureProviderSetupWithConfig:(FinvuSnaAuthConfig * _Nullable)config phone:(NSString * _Nonnull)phone;
+@end
+
+
+SWIFT_CLASS_NAMED("FinvuSnaAuthSuccessResponse")
+@interface FinvuSnaAuthSuccessResponse : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull status;
+@property (nonatomic, readonly, copy) NSString * _Nonnull statusCode;
+@property (nonatomic, readonly, copy) NSString * _Nullable authType;
+@property (nonatomic, readonly, copy) NSString * _Nullable token;
+- (nonnull instancetype)initWithStatus:(NSString * _Nonnull)status statusCode:(NSString * _Nonnull)statusCode authType:(NSString * _Nullable)authType token:(NSString * _Nullable)token OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// SNA (Seamless Native Authentication) result wrapper
+SWIFT_CLASS_NAMED("FinvuSnaResult")
+@interface FinvuSnaResult : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nullable token;
+@property (nonatomic, readonly) BOOL success;
+@property (nonatomic, readonly, copy) NSString * _Nullable errorMessage;
+- (nonnull instancetype)initWithToken:(NSString * _Nullable)token success:(BOOL)success errorMessage:(NSString * _Nullable)errorMessage OBJC_DESIGNATED_INITIALIZER;
+/// Convenience initializer for success case
++ (FinvuSnaResult * _Nonnull)successWithToken:(NSString * _Nullable)token SWIFT_WARN_UNUSED_RESULT;
+/// Convenience initializer for failure case
++ (FinvuSnaResult * _Nonnull)failureWithErrorMessage:(NSString * _Nonnull)errorMessage SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 
@@ -738,7 +836,9 @@ SWIFT_CLASS_NAMED("LinkedAccountsResponse")
 SWIFT_CLASS_NAMED("LoginOtpReference")
 @interface FinvuLoginOtpReference : NSObject
 @property (nonatomic, readonly, copy) NSString * _Nonnull reference;
-- (nonnull instancetype)initWithReference:(NSString * _Nonnull)reference OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, readonly, copy) NSString * _Nullable snaToken;
+@property (nonatomic, readonly, copy) NSString * _Nullable authType;
+- (nonnull instancetype)initWithReference:(NSString * _Nonnull)reference snaToken:(NSString * _Nullable)snaToken authType:(NSString * _Nullable)authType OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1484,11 +1584,13 @@ SWIFT_CLASS_NAMED("FinancialInformationEntityInfo")
 @end
 
 @class NSURL;
+@class FinvuSnaAuthConfig;
 
 SWIFT_PROTOCOL("_TtP8FinvuSDK11FinvuConfig_")
 @protocol FinvuConfig
 @property (nonatomic, readonly, copy) NSURL * _Nonnull finvuEndpoint;
 @property (nonatomic, readonly, copy) NSArray<NSString *> * _Nullable certificatePins;
+@property (nonatomic, readonly, strong) FinvuSnaAuthConfig * _Nullable finvuSnaAuthConfig;
 @end
 
 
@@ -1509,6 +1611,12 @@ SWIFT_CLASS_NAMED("FinvuDeviceBinding")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
+/// Environment enum for SNA configuration
+typedef SWIFT_ENUM(NSInteger, FinvuEnvironment, open) {
+  FinvuEnvironmentUat = 0,
+  FinvuEnvironmentProduction = 1,
+};
 
 
 SWIFT_CLASS_NAMED("FinvuLoginResponse")
@@ -1557,6 +1665,96 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) FinvuManager * _Nonnul
 - (void)fetchFIPDetailsWithFipId:(NSString * _Nonnull)fipId completion:(void (^ _Nonnull)(FinvuFIPDetails * _Nullable, NSError * _Nullable))completion;
 - (void)getEntityInfoWithEntityId:(NSString * _Nonnull)entityId entityType:(NSString * _Nonnull)entityType completion:(void (^ _Nonnull)(FinvuEntityInfo * _Nullable, NSError * _Nullable))completion;
 - (void)logoutWithCompletion:(void (^ _Nonnull)(NSError * _Nullable))completion;
+@end
+
+@class UIViewController;
+
+/// SNA Authentication Configuration
+SWIFT_CLASS("_TtC8FinvuSDK18FinvuSnaAuthConfig")
+@interface FinvuSnaAuthConfig : NSObject
+@property (nonatomic, readonly) enum FinvuEnvironment environment;
+@property (nonatomic, readonly, strong) UIViewController * _Nonnull viewController;
+- (nonnull instancetype)initWithEnvironment:(enum FinvuEnvironment)environment viewController:(UIViewController * _Nonnull)viewController OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class FinvuSnaAuthSuccessResponse;
+
+/// Protocol for SNA (Seamless Native Authentication) providers
+SWIFT_PROTOCOL("_TtP8FinvuSDK20FinvuSnaAuthProvider_")
+@protocol FinvuSnaAuthProvider
+/// Return true if the provider is available in runtime (e.g., adapter module present and setup done).
+/// This should be a fast check.
+- (BOOL)isAvailable SWIFT_WARN_UNUSED_RESULT;
+/// Optional setup call. Called by core before any SNA operation.
+/// Implementers may choose to initialize native wrappers here. Should be fast.
+- (void)setupWithConfig:(FinvuSnaAuthConfig * _Nullable)config phone:(NSString * _Nonnull)phone;
+/// Perform SNA authentication and return a token (or nil) as Result.
+/// \param authMeta Authentication metadata
+///
+/// \param completion Completion handler with Result<String?>
+///
+- (void)performSnaWithAuthMeta:(NSDictionary<NSString *, id> * _Nullable)authMeta completion:(void (^ _Nonnull)(FinvuSnaAuthSuccessResponse * _Nullable, NSError * _Nullable))completion;
+- (void)cancel;
+/// Cleanup resources when the provider is no longer needed.
+- (void)onDestroy;
+@end
+
+
+/// Dummy SNA provider that does nothing - used when SNAAdapter is not available
+/// This matches the Android SDK’s NoopFinvuSnaAuthProvider behavior
+SWIFT_CLASS("_TtC8FinvuSDK24FinvuSnaAuthProviderNoop")
+@interface FinvuSnaAuthProviderNoop : NSObject <FinvuSnaAuthProvider>
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (BOOL)isAvailable SWIFT_WARN_UNUSED_RESULT;
+- (void)setupWithConfig:(FinvuSnaAuthConfig * _Nullable)config phone:(NSString * _Nonnull)phone;
+- (void)performSnaWithAuthMeta:(NSDictionary<NSString *, id> * _Nullable)authMeta completion:(void (^ _Nonnull)(FinvuSnaAuthSuccessResponse * _Nullable, NSError * _Nullable))completion;
+- (void)cancel;
+- (void)onDestroy;
+@end
+
+
+/// Registry for SNA authentication providers
+SWIFT_CLASS("_TtC8FinvuSDK28FinvuSnaAuthProviderRegistry")
+@interface FinvuSnaAuthProviderRegistry : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) FinvuSnaAuthProviderRegistry * _Nonnull shared;)
++ (FinvuSnaAuthProviderRegistry * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+- (void)registerWithProvider:(id <FinvuSnaAuthProvider> _Nonnull)provider;
+- (id <FinvuSnaAuthProvider> _Nullable)getAvailableProvider SWIFT_WARN_UNUSED_RESULT;
+- (NSArray<id <FinvuSnaAuthProvider>> * _Nonnull)getAllProviders SWIFT_WARN_UNUSED_RESULT;
+/// Helper to call setupIfNeeded safely on Main (optional).
+- (void)ensureProviderSetupWithConfig:(FinvuSnaAuthConfig * _Nullable)config phone:(NSString * _Nonnull)phone;
+@end
+
+
+SWIFT_CLASS_NAMED("FinvuSnaAuthSuccessResponse")
+@interface FinvuSnaAuthSuccessResponse : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull status;
+@property (nonatomic, readonly, copy) NSString * _Nonnull statusCode;
+@property (nonatomic, readonly, copy) NSString * _Nullable authType;
+@property (nonatomic, readonly, copy) NSString * _Nullable token;
+- (nonnull instancetype)initWithStatus:(NSString * _Nonnull)status statusCode:(NSString * _Nonnull)statusCode authType:(NSString * _Nullable)authType token:(NSString * _Nullable)token OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// SNA (Seamless Native Authentication) result wrapper
+SWIFT_CLASS_NAMED("FinvuSnaResult")
+@interface FinvuSnaResult : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nullable token;
+@property (nonatomic, readonly) BOOL success;
+@property (nonatomic, readonly, copy) NSString * _Nullable errorMessage;
+- (nonnull instancetype)initWithToken:(NSString * _Nullable)token success:(BOOL)success errorMessage:(NSString * _Nullable)errorMessage OBJC_DESIGNATED_INITIALIZER;
+/// Convenience initializer for success case
++ (FinvuSnaResult * _Nonnull)successWithToken:(NSString * _Nullable)token SWIFT_WARN_UNUSED_RESULT;
+/// Convenience initializer for failure case
++ (FinvuSnaResult * _Nonnull)failureWithErrorMessage:(NSString * _Nonnull)errorMessage SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 
@@ -1621,7 +1819,9 @@ SWIFT_CLASS_NAMED("LinkedAccountsResponse")
 SWIFT_CLASS_NAMED("LoginOtpReference")
 @interface FinvuLoginOtpReference : NSObject
 @property (nonatomic, readonly, copy) NSString * _Nonnull reference;
-- (nonnull instancetype)initWithReference:(NSString * _Nonnull)reference OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, readonly, copy) NSString * _Nullable snaToken;
+@property (nonatomic, readonly, copy) NSString * _Nullable authType;
+- (nonnull instancetype)initWithReference:(NSString * _Nonnull)reference snaToken:(NSString * _Nullable)snaToken authType:(NSString * _Nullable)authType OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
