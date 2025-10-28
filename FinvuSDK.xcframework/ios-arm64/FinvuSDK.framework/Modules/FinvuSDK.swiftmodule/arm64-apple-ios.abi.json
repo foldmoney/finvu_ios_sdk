@@ -23487,6 +23487,20 @@
         "moduleName": "FinvuSDK"
       },
       {
+        "kind": "Import",
+        "name": "OSLog",
+        "printedName": "OSLog",
+        "declKind": "Import",
+        "moduleName": "FinvuSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FinvuSDK"
+      },
+      {
         "kind": "TypeDecl",
         "name": "NSError",
         "printedName": "NSError",
@@ -25768,7 +25782,7 @@
     {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Client\/Classes\/FinvuManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 15926,
+      "offset": 15142,
       "length": 5,
       "value": "false"
     },
@@ -25848,6 +25862,20 @@
       "offset": 371,
       "length": 2,
       "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Client\/Classes\/LoginManger.swift",
+      "kind": "StringLiteral",
+      "offset": 236,
+      "length": 15,
+      "value": "\"com.finvu.ios\""
+    },
+    {
+      "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Client\/Classes\/LoginManger.swift",
+      "kind": "StringLiteral",
+      "offset": 263,
+      "length": 14,
+      "value": "\"LoginManager\""
     },
     {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/models\/User.swift",

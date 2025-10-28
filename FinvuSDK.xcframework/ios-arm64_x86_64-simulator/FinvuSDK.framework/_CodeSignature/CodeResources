@@ -18,15 +18,15 @@
 		</data>
 		<key>Modules/FinvuSDK.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		PMEVzDCtVTKVuUy794SyJuDpTmk=
+		H/O8pI2CQ3EAR3uqXqrGKkmRnJo=
 		</data>
 		<key>Modules/FinvuSDK.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		VGLGIJpDHHVqDCyDZNcslDRCBmg=
+		cp/AdulpDovIExqCDlcn0UHIW84=
 		</data>
 		<key>Modules/FinvuSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		q5w5uMrjb95bxDJAQre1WU7s3ek=
+		lSKxjmB/KuADJYx8ZyQiEjBnTww=
 		</data>
 		<key>Modules/FinvuSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -42,11 +42,11 @@
 		</data>
 		<key>Modules/FinvuSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		+sboOgi9GNEkP+yExEKvHpraMvU=
+		FunRByqsKZMtciwHJH6+tjTFyFw=
 		</data>
 		<key>Modules/FinvuSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		q5w5uMrjb95bxDJAQre1WU7s3ek=
+		lSKxjmB/KuADJYx8ZyQiEjBnTww=
 		</data>
 		<key>Modules/FinvuSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>Modules/FinvuSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		HlayRiWttT7bvzjghftPuEAMeeQ=
+		72kmUSGFAwA1WskzTCyxLC/QoP8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -89,21 +89,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			wKbBupT8A56touwjoElhBniVeFywyudrsWE3aPOduv4=
+			BJUoyIiymr3QT23Ze8qIEj6azfKmNsF5PloL1Jw13s4=
 			</data>
 		</dict>
 		<key>Modules/FinvuSDK.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			VizCDjZsLsQZu0qv7S/mkiYriv+Z4Qp6e+ED2Tn+Lic=
+			SYyiu4QYppsyb73jyXa7KMHt17VcOKs4JMjPWH+QcjQ=
 			</data>
 		</dict>
 		<key>Modules/FinvuSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			aJAUeKtZdOJMf2P9EJlgtm7NGTRSICc7PHZsKW5h1RU=
+			ys5hp+1eVlvb0kjcCNbRv2cuKGJt8hyKIibL0n0FZyI=
 			</data>
 		</dict>
 		<key>Modules/FinvuSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -131,14 +131,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			5/ztApp3/zMtPU4brIeKFX0NGb735r3PpOQmkBi6+Cw=
+			NXoe/52zk/a7byx0jDLiP7I5Db/nz+59AyzL0uqlwG4=
 			</data>
 		</dict>
 		<key>Modules/FinvuSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			aJAUeKtZdOJMf2P9EJlgtm7NGTRSICc7PHZsKW5h1RU=
+			ys5hp+1eVlvb0kjcCNbRv2cuKGJt8hyKIibL0n0FZyI=
 			</data>
 		</dict>
 		<key>Modules/FinvuSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -166,7 +166,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			5TZBysS8PHjuENI3ZuaDonXxeuQw1xHmjmn7GOp3S68=
+			MorSyHlTSO7YonEwhK8GK1X7W0vXFm7U4PNFJq9OZ9Q=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
