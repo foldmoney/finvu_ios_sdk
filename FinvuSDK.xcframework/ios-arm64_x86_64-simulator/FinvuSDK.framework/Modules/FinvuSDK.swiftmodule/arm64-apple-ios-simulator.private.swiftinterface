@@ -471,10 +471,82 @@ public struct FinvuErrorMessages {
   public static let snaAuthenticationCancelled: Swift.String
   public static let snaAuthenticationTimeout: Swift.String
 }
+@objc public protocol FinvuEventListener {
+  @objc func onEvent(_ event: FinvuSDK.FinvuEvent)
+}
+@objc public class FinvuEvent : ObjectiveC.NSObject {
+  @objc final public let eventName: Swift.String
+  @objc final public let eventCategory: Swift.String
+  @objc final public let timestamp: Swift.String
+  @objc final public let aaSdkVersion: Swift.String
+  @objc final public let params: [Swift.String : Any]
+  public init(eventName: Swift.String, eventCategory: Swift.String, timestamp: Swift.String, aaSdkVersion: Swift.String, params: [Swift.String : Any] = [:])
+  public func getParam<T>(_ key: Swift.String, as type: T.Type) -> T?
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class FinvuEventTracker : ObjectiveC.NSObject {
+  public static let sdkVersion: Swift.String
+  @objc public static let shared: FinvuSDK.FinvuEventTracker
+  @objc public func setEventsEnabled(_ enabled: Swift.Bool)
+  @objc public func addEventListener(_ listener: any FinvuSDK.FinvuEventListener)
+  @objc public func removeEventListener(_ listener: any FinvuSDK.FinvuEventListener)
+  @objc public func track(_ eventName: Swift.String, params: [Swift.String : Any] = [:])
+  @objc public func registerAliases(_ aliases: [Swift.String : Swift.String])
+  @objc public func isTrackerInitialized() -> Swift.Bool
+  @objc deinit
+}
+@objc public enum FinvuEventType : Swift.Int, Swift.CaseIterable {
+  case websocketConnected = 0
+  case websocketDisconnected
+  case consentRequestValid
+  case consentRequestInvalid
+  case loginInitiated
+  case loginOtpGenerated
+  case loginOtpFailed
+  case loginOtpLocked
+  case loginOtpVerified
+  case loginOtpNotVerified
+  case loginWithSnaSucceeded
+  case loginSnaTokenVerified
+  case loginSnaFailed
+  case loginFallbackInitiated
+  case discoveryInitiated
+  case accountsDiscovered
+  case discoveryFailed
+  case accountsNotDiscovered
+  case linkingInitiated
+  case linkingOtpGenerated
+  case linkingOtpFailed
+  case linkingSuccess
+  case linkingFailure
+  case linkedAccountsSummary
+  case consentApproved
+  case consentDenied
+  case approveConsentFailed
+  case consentHandleFailed
+  case getConsentStatusFailed
+  case sessionError
+  case sessionFailure
+  public var eventName: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias AllCases = [FinvuSDK.FinvuEventType]
+  public typealias RawValue = Swift.Int
+  nonisolated public static var allCases: [FinvuSDK.FinvuEventType] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc final public class FinvuManager : ObjectiveC.NSObject {
   @objc public static var shared: FinvuSDK.FinvuManager
   @objc final public func setCompletionDispatchQueue(queue: Dispatch.DispatchQueue)
   @objc final public func initializeWith(config: any FinvuSDK.FinvuConfig)
+  @objc final public func addEventListener(_ listener: any FinvuSDK.FinvuEventListener)
+  @objc final public func removeEventListener(_ listener: any FinvuSDK.FinvuEventListener)
+  @objc final public func setEventsEnabled(_ enabled: Swift.Bool)
   @objc final public func connect(completion: @escaping FinvuSDK.CompletionHandler)
   @objc final public func connect()
   @objc final public func disconnect()
@@ -566,6 +638,9 @@ extension FinvuSDK.ConsentFiType : Swift.RawRepresentable {}
 extension FinvuSDK.FinvuErrorCode : Swift.Equatable {}
 extension FinvuSDK.FinvuErrorCode : Swift.Hashable {}
 extension FinvuSDK.FinvuErrorCode : Swift.RawRepresentable {}
+extension FinvuSDK.FinvuEventType : Swift.Equatable {}
+extension FinvuSDK.FinvuEventType : Swift.Hashable {}
+extension FinvuSDK.FinvuEventType : Swift.RawRepresentable {}
 extension FinvuSDK.FinvuEnvironment : Swift.Equatable {}
 extension FinvuSDK.FinvuEnvironment : Swift.Hashable {}
 extension FinvuSDK.FinvuEnvironment : Swift.RawRepresentable {}
