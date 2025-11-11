@@ -20185,9 +20185,55 @@
             "mangledName": "$s8FinvuSDK0A5EventC9eventName0D8Category9timestamp12aaSdkVersion6paramsACSS_S3SSDySSypGtcfc",
             "moduleName": "FinvuSDK",
             "declAttributes": [
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "count",
+            "printedName": "count",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@FinvuSDK@objc(cs)FinvuEvent(py)count",
+            "mangledName": "$s8FinvuSDK0A5EventC5countSivp",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@FinvuSDK@objc(cs)FinvuEvent(im)count",
+                "mangledName": "$s8FinvuSDK0A5EventC5countSivg",
+                "moduleName": "FinvuSDK",
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
           },
           {
             "kind": "Function",
@@ -20237,6 +20283,223 @@
               "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "toDictionary",
+            "printedName": "toDictionary()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@FinvuSDK@objc(cs)FinvuEvent(im)toDictionary",
+            "mangledName": "$s8FinvuSDK0A5EventC12toDictionarySDySSypGyF",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "toJSONString",
+            "printedName": "toJSONString(prettyPrinted:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@FinvuSDK@objc(cs)FinvuEvent(im)toJSONStringWithPrettyPrinted:",
+            "mangledName": "$s8FinvuSDK0A5EventC12toJSONString13prettyPrintedSSSgSb_tF",
+            "moduleName": "FinvuSDK",
+            "objc_name": "toJSONStringWithPrettyPrinted:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "notificationPayload",
+            "printedName": "notificationPayload",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.AnyHashable : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AnyHashable",
+                    "printedName": "Swift.AnyHashable",
+                    "usr": "s:s11AnyHashableV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@FinvuSDK@objc(cs)FinvuEvent(py)notificationPayload",
+            "mangledName": "$s8FinvuSDK0A5EventC19notificationPayloadSDys11AnyHashableVypGvp",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.AnyHashable : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AnyHashable",
+                        "printedName": "Swift.AnyHashable",
+                        "usr": "s:s11AnyHashableV"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@FinvuSDK@objc(cs)FinvuEvent(im)notificationPayload",
+                "mangledName": "$s8FinvuSDK0A5EventC19notificationPayloadSDys11AnyHashableVypGvg",
+                "moduleName": "FinvuSDK",
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "userInfo",
+            "printedName": "userInfo",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.AnyHashable : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AnyHashable",
+                    "printedName": "Swift.AnyHashable",
+                    "usr": "s:s11AnyHashableV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@FinvuSDK@objc(cs)FinvuEvent(py)userInfo",
+            "mangledName": "$s8FinvuSDK0A5EventC8userInfoSDys11AnyHashableVypGvp",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.AnyHashable : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AnyHashable",
+                        "printedName": "Swift.AnyHashable",
+                        "usr": "s:s11AnyHashableV"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@FinvuSDK@objc(cs)FinvuEvent(im)userInfo",
+                "mangledName": "$s8FinvuSDK0A5EventC8userInfoSDys11AnyHashableVypGvg",
+                "moduleName": "FinvuSDK",
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
           },
           {
             "kind": "Constructor",
@@ -20416,6 +20679,59 @@
                 "implicit": true,
                 "declAttributes": [
                   "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "eventNotificationName",
+            "printedName": "eventNotificationName",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Name",
+                "printedName": "Foundation.NSNotification.Name",
+                "usr": "c:@T@NSNotificationName"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@FinvuSDK@objc(cs)FinvuEventTracker(cpy)eventNotificationName",
+            "mangledName": "$s8FinvuSDK0A12EventTrackerC21eventNotificationNameSo014NSNotificationG0avpZ",
+            "moduleName": "FinvuSDK",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Name",
+                    "printedName": "Foundation.NSNotification.Name",
+                    "usr": "c:@T@NSNotificationName"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@FinvuSDK@objc(cs)FinvuEventTracker(cm)eventNotificationName",
+                "mangledName": "$s8FinvuSDK0A12EventTrackerC21eventNotificationNameSo014NSNotificationG0avgZ",
+                "moduleName": "FinvuSDK",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
                 ],
                 "accessorKind": "get"
               }
@@ -27498,35 +27814,35 @@
     {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/events\/EventDefinition.swift",
       "kind": "IntegerLiteral",
-      "offset": 163,
+      "offset": 259,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/events\/EventDefinition.swift",
       "kind": "Array",
-      "offset": 236,
+      "offset": 402,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/events\/EventDefinition.swift",
       "kind": "Array",
-      "offset": 267,
+      "offset": 433,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/events\/EventDefinition.swift",
       "kind": "Array",
-      "offset": 396,
+      "offset": 722,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/events\/EventDefinition.swift",
       "kind": "Array",
-      "offset": 428,
+      "offset": 754,
       "length": 2,
       "value": "[]"
     },
@@ -28429,9 +28745,37 @@
     {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/events\/FinvuEvent.swift",
       "kind": "Dictionary",
-      "offset": 877,
+      "offset": 1092,
       "length": 3,
       "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/events\/FinvuEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 1443,
+      "length": 7,
+      "value": "\"count\""
+    },
+    {
+      "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/events\/FinvuEvent.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1463,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/events\/FinvuEvent.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2322,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/events\/FinvuEvent.swift",
+      "kind": "StringLiteral",
+      "offset": 3090,
+      "length": 6,
+      "value": "\"json\""
     },
     {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/events\/FinvuEventDefinitions.swift",
@@ -28709,21 +29053,21 @@
     {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/events\/FinvuEventTracker.swift",
       "kind": "StringLiteral",
-      "offset": 357,
+      "offset": 439,
       "length": 15,
       "value": "\"com.finvu.ios\""
     },
     {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/events\/FinvuEventTracker.swift",
       "kind": "StringLiteral",
-      "offset": 384,
+      "offset": 466,
       "length": 19,
       "value": "\"FinvuEventTracker\""
     },
     {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/events\/FinvuEventTracker.swift",
       "kind": "StringLiteral",
-      "offset": 440,
+      "offset": 522,
       "length": 7,
       "value": "\"1.0.9\""
     },
@@ -28731,69 +29075,55 @@
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/events\/FinvuEventTracker.swift",
       "kind": "StringLiteral",
       "offset": 600,
-      "length": 34,
-      "value": "\"com.finvu.eventTracker.listeners\""
+      "length": 27,
+      "value": "\"FinvuSDKEventNotification\""
     },
     {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/events\/FinvuEventTracker.swift",
       "kind": "Array",
-      "offset": 716,
+      "offset": 1094,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/events\/FinvuEventTracker.swift",
-      "kind": "StringLiteral",
-      "offset": 781,
-      "length": 37,
-      "value": "\"com.finvu.eventTracker.customEvents\""
-    },
-    {
-      "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/events\/FinvuEventTracker.swift",
       "kind": "Dictionary",
-      "offset": 903,
+      "offset": 1155,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/events\/FinvuEventTracker.swift",
       "kind": "Dictionary",
-      "offset": 956,
+      "offset": 1208,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/events\/FinvuEventTracker.swift",
-      "kind": "StringLiteral",
-      "offset": 1132,
-      "length": 32,
-      "value": "\"com.finvu.eventTracker.enabled\""
-    },
-    {
-      "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/events\/FinvuEventTracker.swift",
       "kind": "BooleanLiteral",
-      "offset": 1204,
+      "offset": 1250,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/events\/FinvuEventTracker.swift",
       "kind": "BooleanLiteral",
-      "offset": 1248,
+      "offset": 1385,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/events\/FinvuEventTracker.swift",
       "kind": "StringLiteral",
-      "offset": 1386,
+      "offset": 1523,
       "length": 35,
       "value": "\"com.finvu.eventTracker.processing\""
     },
     {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/events\/FinvuEventTracker.swift",
       "kind": "Dictionary",
-      "offset": 4646,
+      "offset": 6015,
       "length": 3,
       "value": "[]"
     },
@@ -29038,7 +29368,7 @@
     {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Client\/Classes\/FinvuManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 16317,
+      "offset": 16733,
       "length": 5,
       "value": "false"
     },

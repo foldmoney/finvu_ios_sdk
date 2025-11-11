@@ -636,7 +636,9 @@ typedef SWIFT_ENUM(NSInteger, FinvuEnvironment, open) {
 };
 
 
-/// Event data struct - immutable for thread safety
+/// Event data class - immutable for thread safety
+/// EventDefinition (internal): Used by SDK to track metadata and counts
+/// FinvuEvent (public): Immutable snapshot sent to customers when event occurs
 SWIFT_CLASS("_TtC8FinvuSDK10FinvuEvent")
 @interface FinvuEvent : NSObject
 @property (nonatomic, readonly, copy) NSString * _Nonnull eventName;
@@ -644,6 +646,18 @@ SWIFT_CLASS("_TtC8FinvuSDK10FinvuEvent")
 @property (nonatomic, readonly, copy) NSString * _Nonnull timestamp;
 @property (nonatomic, readonly, copy) NSString * _Nonnull aaSdkVersion;
 @property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nonnull params;
+/// Get event count from params (always present)
+@property (nonatomic, readonly) NSInteger count;
+/// Dictionary representation suitable for Objective-C / cross-platform bridges
+- (NSDictionary<NSString *, id> * _Nonnull)toDictionary SWIFT_WARN_UNUSED_RESULT;
+/// JSON string representation for easier transport. Returns nil if params contain non-JSON values.
+- (NSString * _Nullable)toJSONStringWithPrettyPrinted:(BOOL)prettyPrinted SWIFT_WARN_UNUSED_RESULT;
+/// Notification payload for NotificationCenter (NOT user PII - just event data)
+/// Contains event data as dictionary + JSON string for easy consumption
+@property (nonatomic, readonly, copy) NSDictionary * _Nonnull notificationPayload;
+/// @deprecated Use notificationPayload instead. This name is confusing (not user PII).
+/// Kept for backward compatibility.
+@property (nonatomic, readonly, copy) NSDictionary * _Nonnull userInfo;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -671,9 +685,14 @@ SWIFT_PROTOCOL("_TtP8FinvuSDK18FinvuEventListener_")
 ///   <li>
 ///     No memory/thread overhead until actively used
 ///   </li>
+///   <li>
+///     Uses lightweight locks (matching Android’s thread-safe collections approach)
+///   </li>
 /// </ul>
 SWIFT_CLASS("_TtC8FinvuSDK17FinvuEventTracker")
 @interface FinvuEventTracker : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSNotificationName _Nonnull eventNotificationName;)
++ (NSNotificationName _Nonnull)eventNotificationName SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) FinvuEventTracker * _Nonnull shared;)
 + (FinvuEventTracker * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -685,20 +704,25 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) FinvuEventTr
 - (void)setEventsEnabled:(BOOL)enabled;
 /// Add event listener (thread-safe)
 /// Initializes tracker on first listener
+/// Uses locks directly (matching Android’s thread-safe collections approach)
 - (void)addEventListener:(id <FinvuEventListener> _Nonnull)listener;
 /// Remove event listener (thread-safe)
-/// Cleans up and resets when last listener removed
+/// Cleans up and resets counters when last listener removed (matches Android behavior)
+/// Uses locks directly (matching Android’s thread-safe collections approach)
 - (void)removeEventListener:(id <FinvuEventListener> _Nonnull)listener;
 /// Track event - optimized for performance
 /// <ul>
 ///   <li>
-///     Fast path if events disabled or no listeners
+///     Fast path if events disabled
 ///   </li>
 ///   <li>
 ///     Minimal allocations
 ///   </li>
 ///   <li>
 ///     Async processing to avoid blocking caller
+///   </li>
+///   <li>
+///     Always posts notifications (even without listeners) for parent app bridges
 ///   </li>
 /// </ul>
 - (void)track:(NSString * _Nonnull)eventName params:(NSDictionary<NSString *, id> * _Nonnull)params;
@@ -1739,7 +1763,9 @@ typedef SWIFT_ENUM(NSInteger, FinvuEnvironment, open) {
 };
 
 
-/// Event data struct - immutable for thread safety
+/// Event data class - immutable for thread safety
+/// EventDefinition (internal): Used by SDK to track metadata and counts
+/// FinvuEvent (public): Immutable snapshot sent to customers when event occurs
 SWIFT_CLASS("_TtC8FinvuSDK10FinvuEvent")
 @interface FinvuEvent : NSObject
 @property (nonatomic, readonly, copy) NSString * _Nonnull eventName;
@@ -1747,6 +1773,18 @@ SWIFT_CLASS("_TtC8FinvuSDK10FinvuEvent")
 @property (nonatomic, readonly, copy) NSString * _Nonnull timestamp;
 @property (nonatomic, readonly, copy) NSString * _Nonnull aaSdkVersion;
 @property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nonnull params;
+/// Get event count from params (always present)
+@property (nonatomic, readonly) NSInteger count;
+/// Dictionary representation suitable for Objective-C / cross-platform bridges
+- (NSDictionary<NSString *, id> * _Nonnull)toDictionary SWIFT_WARN_UNUSED_RESULT;
+/// JSON string representation for easier transport. Returns nil if params contain non-JSON values.
+- (NSString * _Nullable)toJSONStringWithPrettyPrinted:(BOOL)prettyPrinted SWIFT_WARN_UNUSED_RESULT;
+/// Notification payload for NotificationCenter (NOT user PII - just event data)
+/// Contains event data as dictionary + JSON string for easy consumption
+@property (nonatomic, readonly, copy) NSDictionary * _Nonnull notificationPayload;
+/// @deprecated Use notificationPayload instead. This name is confusing (not user PII).
+/// Kept for backward compatibility.
+@property (nonatomic, readonly, copy) NSDictionary * _Nonnull userInfo;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1774,9 +1812,14 @@ SWIFT_PROTOCOL("_TtP8FinvuSDK18FinvuEventListener_")
 ///   <li>
 ///     No memory/thread overhead until actively used
 ///   </li>
+///   <li>
+///     Uses lightweight locks (matching Android’s thread-safe collections approach)
+///   </li>
 /// </ul>
 SWIFT_CLASS("_TtC8FinvuSDK17FinvuEventTracker")
 @interface FinvuEventTracker : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSNotificationName _Nonnull eventNotificationName;)
++ (NSNotificationName _Nonnull)eventNotificationName SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) FinvuEventTracker * _Nonnull shared;)
 + (FinvuEventTracker * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -1788,20 +1831,25 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) FinvuEventTr
 - (void)setEventsEnabled:(BOOL)enabled;
 /// Add event listener (thread-safe)
 /// Initializes tracker on first listener
+/// Uses locks directly (matching Android’s thread-safe collections approach)
 - (void)addEventListener:(id <FinvuEventListener> _Nonnull)listener;
 /// Remove event listener (thread-safe)
-/// Cleans up and resets when last listener removed
+/// Cleans up and resets counters when last listener removed (matches Android behavior)
+/// Uses locks directly (matching Android’s thread-safe collections approach)
 - (void)removeEventListener:(id <FinvuEventListener> _Nonnull)listener;
 /// Track event - optimized for performance
 /// <ul>
 ///   <li>
-///     Fast path if events disabled or no listeners
+///     Fast path if events disabled
 ///   </li>
 ///   <li>
 ///     Minimal allocations
 ///   </li>
 ///   <li>
 ///     Async processing to avoid blocking caller
+///   </li>
+///   <li>
+///     Always posts notifications (even without listeners) for parent app bridges
 ///   </li>
 /// </ul>
 - (void)track:(NSString * _Nonnull)eventName params:(NSDictionary<NSString *, id> * _Nonnull)params;

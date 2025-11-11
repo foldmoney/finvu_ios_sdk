@@ -481,11 +481,23 @@ public struct FinvuErrorMessages {
   @objc final public let aaSdkVersion: Swift.String
   @objc final public let params: [Swift.String : Any]
   public init(eventName: Swift.String, eventCategory: Swift.String, timestamp: Swift.String, aaSdkVersion: Swift.String, params: [Swift.String : Any] = [:])
+  @objc public var count: Swift.Int {
+    @objc get
+  }
   public func getParam<T>(_ key: Swift.String, as type: T.Type) -> T?
+  @objc public func toDictionary() -> [Swift.String : Any]
+  @objc public func toJSONString(prettyPrinted: Swift.Bool = false) -> Swift.String?
+  @objc public var notificationPayload: [Swift.AnyHashable : Any] {
+    @objc get
+  }
+  @objc public var userInfo: [Swift.AnyHashable : Any] {
+    @objc get
+  }
   @objc deinit
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class FinvuEventTracker : ObjectiveC.NSObject {
   public static let sdkVersion: Swift.String
+  @objc public static let eventNotificationName: Foundation.Notification.Name
   @objc public static let shared: FinvuSDK.FinvuEventTracker
   @objc public func setEventsEnabled(_ enabled: Swift.Bool)
   @objc public func addEventListener(_ listener: any FinvuSDK.FinvuEventListener)
