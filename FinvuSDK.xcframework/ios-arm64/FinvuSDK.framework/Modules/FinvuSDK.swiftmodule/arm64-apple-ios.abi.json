@@ -2483,6 +2483,802 @@
         "moduleName": "FinvuSDK"
       },
       {
+        "kind": "TypeDecl",
+        "name": "EventDefinition",
+        "printedName": "EventDefinition",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "category",
+            "printedName": "category",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK15EventDefinitionC8categorySSvp",
+            "mangledName": "$s8FinvuSDK15EventDefinitionC8categorySSvp",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK15EventDefinitionC8categorySSvg",
+                "mangledName": "$s8FinvuSDK15EventDefinitionC8categorySSvg",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "count",
+            "printedName": "count",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK15EventDefinitionC5countSivp",
+            "mangledName": "$s8FinvuSDK15EventDefinitionC5countSivp",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK15EventDefinitionC5countSivg",
+                "mangledName": "$s8FinvuSDK15EventDefinitionC5countSivg",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK15EventDefinitionC5countSivs",
+                "mangledName": "$s8FinvuSDK15EventDefinitionC5countSivs",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK15EventDefinitionC5countSivM",
+                "mangledName": "$s8FinvuSDK15EventDefinitionC5countSivM",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "stage",
+            "printedName": "stage",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK15EventDefinitionC5stageSSSgvp",
+            "mangledName": "$s8FinvuSDK15EventDefinitionC5stageSSSgvp",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK15EventDefinitionC5stageSSSgvg",
+                "mangledName": "$s8FinvuSDK15EventDefinitionC5stageSSSgvg",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK15EventDefinitionC5stageSSSgvs",
+                "mangledName": "$s8FinvuSDK15EventDefinitionC5stageSSSgvs",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK15EventDefinitionC5stageSSSgvM",
+                "mangledName": "$s8FinvuSDK15EventDefinitionC5stageSSSgvM",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "fipId",
+            "printedName": "fipId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK15EventDefinitionC5fipIdSSSgvp",
+            "mangledName": "$s8FinvuSDK15EventDefinitionC5fipIdSSSgvp",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK15EventDefinitionC5fipIdSSSgvg",
+                "mangledName": "$s8FinvuSDK15EventDefinitionC5fipIdSSSgvg",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK15EventDefinitionC5fipIdSSSgvs",
+                "mangledName": "$s8FinvuSDK15EventDefinitionC5fipIdSSSgvs",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK15EventDefinitionC5fipIdSSSgvM",
+                "mangledName": "$s8FinvuSDK15EventDefinitionC5fipIdSSSgvM",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "fips",
+            "printedName": "fips",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK15EventDefinitionC4fipsSaySSGvp",
+            "mangledName": "$s8FinvuSDK15EventDefinitionC4fipsSaySSGvp",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK15EventDefinitionC4fipsSaySSGvg",
+                "mangledName": "$s8FinvuSDK15EventDefinitionC4fipsSaySSGvg",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK15EventDefinitionC4fipsSaySSGvs",
+                "mangledName": "$s8FinvuSDK15EventDefinitionC4fipsSaySSGvs",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK15EventDefinitionC4fipsSaySSGvM",
+                "mangledName": "$s8FinvuSDK15EventDefinitionC4fipsSaySSGvM",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "fiTypes",
+            "printedName": "fiTypes",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK15EventDefinitionC7fiTypesSaySSGvp",
+            "mangledName": "$s8FinvuSDK15EventDefinitionC7fiTypesSaySSGvp",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK15EventDefinitionC7fiTypesSaySSGvg",
+                "mangledName": "$s8FinvuSDK15EventDefinitionC7fiTypesSaySSGvg",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK15EventDefinitionC7fiTypesSaySSGvs",
+                "mangledName": "$s8FinvuSDK15EventDefinitionC7fiTypesSaySSGvs",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK15EventDefinitionC7fiTypesSaySSGvM",
+                "mangledName": "$s8FinvuSDK15EventDefinitionC7fiTypesSaySSGvM",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(category:stage:fipId:fips:fiTypes:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "EventDefinition",
+                "printedName": "FinvuSDK.EventDefinition",
+                "usr": "c:@M@FinvuSDK@objc(cs)EventDefinition"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@FinvuSDK@objc(cs)EventDefinition(im)initWithCategory:stage:fipId:fips:fiTypes:",
+            "mangledName": "$s8FinvuSDK15EventDefinitionC8category5stage5fipId4fips7fiTypesACSS_SSSgAISaySSGAJtcfc",
+            "moduleName": "FinvuSDK",
+            "objc_name": "initWithCategory:stage:fipId:fips:fiTypes:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "reset",
+            "printedName": "reset()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@FinvuSDK@objc(cs)EventDefinition(im)reset",
+            "mangledName": "$s8FinvuSDK15EventDefinitionC5resetyyF",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "EventDefinition",
+                "printedName": "FinvuSDK.EventDefinition",
+                "usr": "c:@M@FinvuSDK@objc(cs)EventDefinition"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@FinvuSDK@objc(cs)EventDefinition(im)init",
+            "mangledName": "$s8FinvuSDK15EventDefinitionCACycfc",
+            "moduleName": "FinvuSDK",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@FinvuSDK@objc(cs)EventDefinition",
+        "mangledName": "$s8FinvuSDK15EventDefinitionC",
+        "moduleName": "FinvuSDK",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC",
+          "RawDocComment"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
@@ -27814,35 +28610,35 @@
     {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/events\/EventDefinition.swift",
       "kind": "IntegerLiteral",
-      "offset": 259,
+      "offset": 331,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/events\/EventDefinition.swift",
       "kind": "Array",
-      "offset": 402,
+      "offset": 495,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/events\/EventDefinition.swift",
       "kind": "Array",
-      "offset": 433,
+      "offset": 533,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/events\/EventDefinition.swift",
       "kind": "Array",
-      "offset": 722,
+      "offset": 835,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/events\/EventDefinition.swift",
       "kind": "Array",
-      "offset": 754,
+      "offset": 867,
       "length": 2,
       "value": "[]"
     },
@@ -29368,7 +30164,7 @@
     {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Client\/Classes\/FinvuManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 16733,
+      "offset": 17230,
       "length": 5,
       "value": "false"
     },

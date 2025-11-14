@@ -99,6 +99,17 @@ public enum ConsentFiType : Swift.String, Swift.CaseIterable {
 extension Foundation.NSError {
   public static func finvuError(code: FinvuSDK.FinvuErrorCode, message: Swift.String?, userInfo: [Swift.String : Any]? = nil) -> Foundation.NSError
 }
+@objc public class EventDefinition : ObjectiveC.NSObject {
+  final public let category: Swift.String
+  public var count: Swift.Int
+  public var stage: Swift.String?
+  public var fipId: Swift.String?
+  public var fips: [Swift.String]
+  public var fiTypes: [Swift.String]
+  @objc public init(category: Swift.String, stage: Swift.String? = nil, fipId: Swift.String? = nil, fips: [Swift.String] = [], fiTypes: [Swift.String] = [])
+  @objc public func reset()
+  @objc deinit
+}
 public typealias CompletionHandlerWithData<T> = (T?, Foundation.NSError?) -> Swift.Void where T : ObjectiveC.NSObject
 public typealias CompletionHandler = (Foundation.NSError?) -> Swift.Void
 public enum FinvuErrorCode : Swift.Int {

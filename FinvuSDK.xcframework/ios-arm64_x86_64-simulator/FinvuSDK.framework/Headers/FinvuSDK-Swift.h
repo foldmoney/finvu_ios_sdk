@@ -513,6 +513,18 @@ SWIFT_CLASS_NAMED("EntityInfo")
 @end
 
 
+/// Event definition for tracking event metadata
+/// This class is used to define custom events and their properties.
+/// It’s public so it can be used by SDK consumers to register custom events.
+SWIFT_CLASS("_TtC8FinvuSDK15EventDefinition")
+@interface EventDefinition : NSObject
+- (nonnull instancetype)initWithCategory:(NSString * _Nonnull)category stage:(NSString * _Nullable)stage fipId:(NSString * _Nullable)fipId fips:(NSArray<NSString *> * _Nonnull)fips fiTypes:(NSArray<NSString *> * _Nonnull)fiTypes OBJC_DESIGNATED_INITIALIZER;
+- (void)reset;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 SWIFT_CLASS_NAMED("FIDecryptedDataInfo")
 @interface FinvuFIEncryptedDataView : NSObject
 @property (nonatomic, readonly, copy) NSString * _Nonnull linkReferenceNumber;
@@ -1635,6 +1647,18 @@ SWIFT_CLASS_NAMED("EntityInfo")
 @property (nonatomic, readonly, copy) NSString * _Nullable entityLogoUri;
 @property (nonatomic, readonly, copy) NSString * _Nullable entityLogoWithNameUri;
 - (nonnull instancetype)initWithEntityId:(NSString * _Nonnull)entityId entityName:(NSString * _Nonnull)entityName entityIconUri:(NSString * _Nullable)entityIconUri entityLogoUri:(NSString * _Nullable)entityLogoUri entityLogoWithNameUri:(NSString * _Nullable)entityLogoWithNameUri OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// Event definition for tracking event metadata
+/// This class is used to define custom events and their properties.
+/// It’s public so it can be used by SDK consumers to register custom events.
+SWIFT_CLASS("_TtC8FinvuSDK15EventDefinition")
+@interface EventDefinition : NSObject
+- (nonnull instancetype)initWithCategory:(NSString * _Nonnull)category stage:(NSString * _Nullable)stage fipId:(NSString * _Nullable)fipId fips:(NSArray<NSString *> * _Nonnull)fips fiTypes:(NSArray<NSString *> * _Nonnull)fiTypes OBJC_DESIGNATED_INITIALIZER;
+- (void)reset;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
