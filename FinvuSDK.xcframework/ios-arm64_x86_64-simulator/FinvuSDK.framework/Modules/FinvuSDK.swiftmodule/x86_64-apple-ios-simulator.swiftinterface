@@ -514,6 +514,7 @@ public struct FinvuErrorMessages {
   @objc public func addEventListener(_ listener: any FinvuSDK.FinvuEventListener)
   @objc public func removeEventListener(_ listener: any FinvuSDK.FinvuEventListener)
   @objc public func track(_ eventName: Swift.String, params: [Swift.String : Any] = [:])
+  @objc public func registerCustomEvents(_ events: [Swift.String : FinvuSDK.EventDefinition])
   @objc public func registerAliases(_ aliases: [Swift.String : Swift.String])
   @objc public func isTrackerInitialized() -> Swift.Bool
   @objc deinit

@@ -21720,6 +21720,48 @@
           },
           {
             "kind": "Function",
+            "name": "registerCustomEvents",
+            "printedName": "registerCustomEvents(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : FinvuSDK.EventDefinition]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "EventDefinition",
+                    "printedName": "FinvuSDK.EventDefinition",
+                    "usr": "c:@M@FinvuSDK@objc(cs)EventDefinition"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@FinvuSDK@objc(cs)FinvuEventTracker(im)registerCustomEvents:",
+            "mangledName": "$s8FinvuSDK0A12EventTrackerC20registerCustomEventsyySDySSAA0C10DefinitionCGF",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "registerAliases",
             "printedName": "registerAliases(_:)",
             "children": [

@@ -738,6 +738,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) FinvuEventTr
 ///   </li>
 /// </ul>
 - (void)track:(NSString * _Nonnull)eventName params:(NSDictionary<NSString *, id> * _Nonnull)params;
+/// Register custom events (thread-safe)
+/// Note: Internal method - EventDefinition is not exposed to Objective-C
+- (void)registerCustomEvents:(NSDictionary<NSString *, EventDefinition *> * _Nonnull)events;
 /// Register event aliases (thread-safe)
 - (void)registerAliases:(NSDictionary<NSString *, NSString *> * _Nonnull)aliases;
 /// Check if tracker is initialized (for testing)
