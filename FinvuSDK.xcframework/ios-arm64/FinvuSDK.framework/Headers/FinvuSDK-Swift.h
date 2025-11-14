@@ -818,6 +818,37 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) FinvuManager * _Nonnul
 /// to start tracking events, even if listeners are added.
 /// @param enabled True to enable, false to disable
 - (void)setEventsEnabled:(BOOL)enabled;
+/// Register custom events
+/// Custom events allow you to track events specific to your app.
+/// They follow the same structure as standard events.
+/// Example:
+/// \code
+/// let customEvents = [
+///     "CUSTOM_BUTTON_CLICKED": EventDefinition(category: "ui"),
+///     "CUSTOM_API_CALLED": EventDefinition(category: "api")
+/// ]
+/// finvuManager.registerCustomEvents(customEvents)
+///
+/// \endcodeThen track them:
+/// \code
+/// FinvuEventTracker.shared.track("CUSTOM_BUTTON_CLICKED", params: ["buttonId": "login"])
+///
+/// \endcode@param events Dictionary of event name to EventDefinition
+- (void)registerCustomEvents:(NSDictionary<NSString *, EventDefinition *> * _Nonnull)events;
+/// Register event aliases
+/// Aliases allow you to use custom names for standard events.
+/// Useful for analytics or when integrating with third-party tools.
+/// Example:
+/// \code
+/// let aliases = [
+///     "LOGIN_OTP_VERIFIED": "otp_sent",
+///     "WEBSOCKET_CONNECTED": "connection_established"
+/// ]
+/// finvuManager.registerAliases(aliases)
+///
+/// \endcodeWhen events are tracked, the alias will be used instead of the original name.
+/// @param aliases Dictionary of standard event name to alias
+- (void)registerAliases:(NSDictionary<NSString *, NSString *> * _Nonnull)aliases;
 - (void)connectWithCompletion:(void (^ _Nonnull)(NSError * _Nullable))completion;
 - (void)connect;
 - (void)disconnect;

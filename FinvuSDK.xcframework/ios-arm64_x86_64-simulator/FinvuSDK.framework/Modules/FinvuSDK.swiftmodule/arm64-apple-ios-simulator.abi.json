@@ -23762,6 +23762,92 @@
           },
           {
             "kind": "Function",
+            "name": "registerCustomEvents",
+            "printedName": "registerCustomEvents(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : FinvuSDK.EventDefinition]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "EventDefinition",
+                    "printedName": "FinvuSDK.EventDefinition",
+                    "usr": "c:@M@FinvuSDK@objc(cs)EventDefinition"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@FinvuSDK@objc(cs)FinvuManager(im)registerCustomEvents:",
+            "mangledName": "$s8FinvuSDK0A7ManagerC20registerCustomEventsyySDySSAA15EventDefinitionCGF",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "registerAliases",
+            "printedName": "registerAliases(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@FinvuSDK@objc(cs)FinvuManager(im)registerAliases:",
+            "mangledName": "$s8FinvuSDK0A7ManagerC15registerAliasesyySDyS2SGF",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "connect",
             "printedName": "connect(completion:)",
             "children": [
@@ -30206,7 +30292,7 @@
     {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Client\/Classes\/FinvuManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 17230,
+      "offset": 18782,
       "length": 5,
       "value": "false"
     },
