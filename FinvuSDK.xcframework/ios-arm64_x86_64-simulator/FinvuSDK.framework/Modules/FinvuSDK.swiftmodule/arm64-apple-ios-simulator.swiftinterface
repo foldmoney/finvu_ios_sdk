@@ -573,6 +573,7 @@ public struct FinvuErrorMessages {
   @objc final public func setEventsEnabled(_ enabled: Swift.Bool)
   @objc final public func registerCustomEvents(_ events: [Swift.String : FinvuSDK.EventDefinition])
   @objc final public func registerAliases(_ aliases: [Swift.String : Swift.String])
+  @objc final public func track(_ eventName: Swift.String, params: [Swift.String : Any] = [:])
   @objc final public func connect(completion: @escaping FinvuSDK.CompletionHandler)
   @objc final public func connect()
   @objc final public func disconnect()

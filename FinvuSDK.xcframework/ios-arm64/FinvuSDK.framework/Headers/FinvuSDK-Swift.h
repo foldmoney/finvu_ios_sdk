@@ -849,6 +849,19 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) FinvuManager * _Nonnul
 /// \endcodeWhen events are tracked, the alias will be used instead of the original name.
 /// @param aliases Dictionary of standard event name to alias
 - (void)registerAliases:(NSDictionary<NSString *, NSString *> * _Nonnull)aliases;
+/// Track an event
+/// Track a standard SDK event or a custom event that has been registered.
+/// Example:
+/// \code
+/// // Track a standard event
+/// finvuManager.track("LOGIN_INITIATED")
+///
+/// // Track an event with parameters
+/// finvuManager.track("CUSTOM_BUTTON_CLICKED", params: ["buttonId": "login"])
+///
+/// \endcode@param eventName The name of the event to track
+/// @param params Optional dictionary of event parameters
+- (void)track:(NSString * _Nonnull)eventName params:(NSDictionary<NSString *, id> * _Nonnull)params;
 - (void)connectWithCompletion:(void (^ _Nonnull)(NSError * _Nullable))completion;
 - (void)connect;
 - (void)disconnect;
