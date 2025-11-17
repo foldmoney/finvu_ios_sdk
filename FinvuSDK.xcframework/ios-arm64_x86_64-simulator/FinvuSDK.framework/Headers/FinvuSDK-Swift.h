@@ -513,6 +513,18 @@ SWIFT_CLASS_NAMED("EntityInfo")
 @end
 
 
+/// Event definition for tracking event metadata
+/// This class is used to define custom events and their properties.
+/// It’s public so it can be used by SDK consumers to register custom events.
+SWIFT_CLASS("_TtC8FinvuSDK15EventDefinition")
+@interface EventDefinition : NSObject
+- (nonnull instancetype)initWithCategory:(NSString * _Nonnull)category stage:(NSString * _Nullable)stage fipId:(NSString * _Nullable)fipId fips:(NSArray<NSString *> * _Nonnull)fips fiTypes:(NSArray<NSString *> * _Nonnull)fiTypes OBJC_DESIGNATED_INITIALIZER;
+- (void)reset;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 SWIFT_CLASS_NAMED("FIDecryptedDataInfo")
 @interface FinvuFIEncryptedDataView : NSObject
 @property (nonatomic, readonly, copy) NSString * _Nonnull linkReferenceNumber;
@@ -636,6 +648,142 @@ typedef SWIFT_ENUM(NSInteger, FinvuEnvironment, open) {
 };
 
 
+/// Event data class - immutable for thread safety
+/// EventDefinition (internal): Used by SDK to track metadata and counts
+/// FinvuEvent (public): Immutable snapshot sent to customers when event occurs
+SWIFT_CLASS("_TtC8FinvuSDK10FinvuEvent")
+@interface FinvuEvent : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull eventName;
+@property (nonatomic, readonly, copy) NSString * _Nonnull eventCategory;
+@property (nonatomic, readonly, copy) NSString * _Nonnull timestamp;
+@property (nonatomic, readonly, copy) NSString * _Nonnull aaSdkVersion;
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nonnull params;
+/// Get event count from params (always present)
+@property (nonatomic, readonly) NSInteger count;
+/// Dictionary representation suitable for Objective-C / cross-platform bridges
+- (NSDictionary<NSString *, id> * _Nonnull)toDictionary SWIFT_WARN_UNUSED_RESULT;
+/// JSON string representation for easier transport. Returns nil if params contain non-JSON values.
+- (NSString * _Nullable)toJSONStringWithPrettyPrinted:(BOOL)prettyPrinted SWIFT_WARN_UNUSED_RESULT;
+/// Notification payload for NotificationCenter (NOT user PII - just event data)
+/// Contains event data as dictionary + JSON string for easy consumption
+@property (nonatomic, readonly, copy) NSDictionary * _Nonnull notificationPayload;
+/// @deprecated Use notificationPayload instead. This name is confusing (not user PII).
+/// Kept for backward compatibility.
+@property (nonatomic, readonly, copy) NSDictionary * _Nonnull userInfo;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// Event listener protocol for receiving SDK events
+/// Events are delivered on main queue by default.
+/// If you need a different queue, switch inside onEvent().
+SWIFT_PROTOCOL("_TtP8FinvuSDK18FinvuEventListener_")
+@protocol FinvuEventListener
+/// Called when an event occurs
+/// @param event The event object containing all event data
+- (void)onEvent:(FinvuEvent * _Nonnull)event;
+@end
+
+
+/// Thread-safe, optimized event tracker with lazy initialization
+/// <ul>
+///   <li>
+///     Only initializes when first listener is added
+///   </li>
+///   <li>
+///     Resets all data when last listener is removed
+///   </li>
+///   <li>
+///     No memory/thread overhead until actively used
+///   </li>
+///   <li>
+///     Uses lightweight locks (matching Android’s thread-safe collections approach)
+///   </li>
+/// </ul>
+SWIFT_CLASS("_TtC8FinvuSDK17FinvuEventTracker")
+@interface FinvuEventTracker : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSNotificationName _Nonnull eventNotificationName;)
++ (NSNotificationName _Nonnull)eventNotificationName SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) FinvuEventTracker * _Nonnull shared;)
++ (FinvuEventTracker * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+/// Enable/disable event tracking (thread-safe)
+/// Events are disabled by default. You must call setEventsEnabled(true)
+/// to start tracking events, even if listeners are added.
+/// @param enabled True to enable event tracking, false to disable
+- (void)setEventsEnabled:(BOOL)enabled;
+/// Add event listener (thread-safe)
+/// Initializes tracker on first listener
+/// Uses locks directly (matching Android’s thread-safe collections approach)
+- (void)addEventListener:(id <FinvuEventListener> _Nonnull)listener;
+/// Remove event listener (thread-safe)
+/// Cleans up and resets counters when last listener removed (matches Android behavior)
+/// Uses locks directly (matching Android’s thread-safe collections approach)
+- (void)removeEventListener:(id <FinvuEventListener> _Nonnull)listener;
+/// Track event - optimized for performance
+/// <ul>
+///   <li>
+///     Fast path if events disabled
+///   </li>
+///   <li>
+///     Minimal allocations
+///   </li>
+///   <li>
+///     Async processing to avoid blocking caller
+///   </li>
+///   <li>
+///     Always posts notifications (even without listeners) for parent app bridges
+///   </li>
+/// </ul>
+- (void)track:(NSString * _Nonnull)eventName params:(NSDictionary<NSString *, id> * _Nonnull)params;
+/// Register custom events (thread-safe)
+/// Note: Internal method - EventDefinition is not exposed to Objective-C
+- (void)registerCustomEvents:(NSDictionary<NSString *, EventDefinition *> * _Nonnull)events;
+/// Register event aliases (thread-safe)
+- (void)registerAliases:(NSDictionary<NSString *, NSString *> * _Nonnull)aliases;
+/// Check if tracker is initialized (for testing)
+- (BOOL)isTrackerInitialized SWIFT_WARN_UNUSED_RESULT;
+@end
+
+/// Enum for all standard SDK events
+/// Use these instead of string literals to avoid typos
+typedef SWIFT_ENUM(NSInteger, FinvuEventType, open) {
+  FinvuEventTypeWebsocketConnected = 0,
+  FinvuEventTypeWebsocketDisconnected = 1,
+  FinvuEventTypeConsentRequestValid = 2,
+  FinvuEventTypeConsentRequestInvalid = 3,
+  FinvuEventTypeLoginInitiated = 4,
+  FinvuEventTypeLoginOtpGenerated = 5,
+  FinvuEventTypeLoginOtpFailed = 6,
+  FinvuEventTypeLoginOtpLocked = 7,
+  FinvuEventTypeLoginOtpVerified = 8,
+  FinvuEventTypeLoginOtpNotVerified = 9,
+  FinvuEventTypeLoginWithSnaSucceeded = 10,
+  FinvuEventTypeLoginSnaTokenVerified = 11,
+  FinvuEventTypeLoginSnaFailed = 12,
+  FinvuEventTypeLoginFallbackInitiated = 13,
+  FinvuEventTypeDiscoveryInitiated = 14,
+  FinvuEventTypeAccountsDiscovered = 15,
+  FinvuEventTypeDiscoveryFailed = 16,
+  FinvuEventTypeAccountsNotDiscovered = 17,
+  FinvuEventTypeLinkingInitiated = 18,
+  FinvuEventTypeLinkingOtpGenerated = 19,
+  FinvuEventTypeLinkingOtpFailed = 20,
+  FinvuEventTypeLinkingSuccess = 21,
+  FinvuEventTypeLinkingFailure = 22,
+  FinvuEventTypeLinkedAccountsSummary = 23,
+  FinvuEventTypeConsentApproved = 24,
+  FinvuEventTypeConsentDenied = 25,
+  FinvuEventTypeApproveConsentFailed = 26,
+  FinvuEventTypeConsentHandleFailed = 27,
+  FinvuEventTypeGetConsentStatusFailed = 28,
+  FinvuEventTypeSessionError = 29,
+  FinvuEventTypeSessionFailure = 30,
+};
+
+
 SWIFT_CLASS_NAMED("FinvuLoginResponse")
 @interface FinvuLoginResponse : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -659,6 +807,61 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) FinvuManager * _Nonnul
 + (void)setShared:(FinvuManager * _Nonnull)value;
 - (void)setCompletionDispatchQueueWithQueue:(dispatch_queue_t _Nonnull)queue;
 - (void)initializeWithConfig:(id <FinvuConfig> _Nonnull)config;
+/// Add an event listener
+/// @param listener The event listener to add
+- (void)addEventListener:(id <FinvuEventListener> _Nonnull)listener;
+/// Remove an event listener
+/// @param listener The event listener to remove
+- (void)removeEventListener:(id <FinvuEventListener> _Nonnull)listener;
+/// Enable or disable event tracking
+/// Events are disabled by default. You must call setEventsEnabled(true)
+/// to start tracking events, even if listeners are added.
+/// @param enabled True to enable, false to disable
+- (void)setEventsEnabled:(BOOL)enabled;
+/// Register custom events
+/// Custom events allow you to track events specific to your app.
+/// They follow the same structure as standard events.
+/// Example:
+/// \code
+/// let customEvents = [
+///     "CUSTOM_BUTTON_CLICKED": EventDefinition(category: "ui"),
+///     "CUSTOM_API_CALLED": EventDefinition(category: "api")
+/// ]
+/// finvuManager.registerCustomEvents(customEvents)
+///
+/// \endcodeThen track them:
+/// \code
+/// FinvuEventTracker.shared.track("CUSTOM_BUTTON_CLICKED", params: ["buttonId": "login"])
+///
+/// \endcode@param events Dictionary of event name to EventDefinition
+- (void)registerCustomEvents:(NSDictionary<NSString *, EventDefinition *> * _Nonnull)events;
+/// Register event aliases
+/// Aliases allow you to use custom names for standard events.
+/// Useful for analytics or when integrating with third-party tools.
+/// Example:
+/// \code
+/// let aliases = [
+///     "LOGIN_OTP_VERIFIED": "otp_sent",
+///     "WEBSOCKET_CONNECTED": "connection_established"
+/// ]
+/// finvuManager.registerAliases(aliases)
+///
+/// \endcodeWhen events are tracked, the alias will be used instead of the original name.
+/// @param aliases Dictionary of standard event name to alias
+- (void)registerAliases:(NSDictionary<NSString *, NSString *> * _Nonnull)aliases;
+/// Track an event
+/// Track a standard SDK event or a custom event that has been registered.
+/// Example:
+/// \code
+/// // Track a standard event
+/// finvuManager.track("LOGIN_INITIATED")
+///
+/// // Track an event with parameters
+/// finvuManager.track("CUSTOM_BUTTON_CLICKED", params: ["buttonId": "login"])
+///
+/// \endcode@param eventName The name of the event to track
+/// @param params Optional dictionary of event parameters
+- (void)track:(NSString * _Nonnull)eventName params:(NSDictionary<NSString *, id> * _Nonnull)params;
 - (void)connectWithCompletion:(void (^ _Nonnull)(NSError * _Nullable))completion;
 - (void)connect;
 - (void)disconnect;
@@ -1496,6 +1699,18 @@ SWIFT_CLASS_NAMED("EntityInfo")
 @end
 
 
+/// Event definition for tracking event metadata
+/// This class is used to define custom events and their properties.
+/// It’s public so it can be used by SDK consumers to register custom events.
+SWIFT_CLASS("_TtC8FinvuSDK15EventDefinition")
+@interface EventDefinition : NSObject
+- (nonnull instancetype)initWithCategory:(NSString * _Nonnull)category stage:(NSString * _Nullable)stage fipId:(NSString * _Nullable)fipId fips:(NSArray<NSString *> * _Nonnull)fips fiTypes:(NSArray<NSString *> * _Nonnull)fiTypes OBJC_DESIGNATED_INITIALIZER;
+- (void)reset;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 SWIFT_CLASS_NAMED("FIDecryptedDataInfo")
 @interface FinvuFIEncryptedDataView : NSObject
 @property (nonatomic, readonly, copy) NSString * _Nonnull linkReferenceNumber;
@@ -1619,6 +1834,142 @@ typedef SWIFT_ENUM(NSInteger, FinvuEnvironment, open) {
 };
 
 
+/// Event data class - immutable for thread safety
+/// EventDefinition (internal): Used by SDK to track metadata and counts
+/// FinvuEvent (public): Immutable snapshot sent to customers when event occurs
+SWIFT_CLASS("_TtC8FinvuSDK10FinvuEvent")
+@interface FinvuEvent : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull eventName;
+@property (nonatomic, readonly, copy) NSString * _Nonnull eventCategory;
+@property (nonatomic, readonly, copy) NSString * _Nonnull timestamp;
+@property (nonatomic, readonly, copy) NSString * _Nonnull aaSdkVersion;
+@property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nonnull params;
+/// Get event count from params (always present)
+@property (nonatomic, readonly) NSInteger count;
+/// Dictionary representation suitable for Objective-C / cross-platform bridges
+- (NSDictionary<NSString *, id> * _Nonnull)toDictionary SWIFT_WARN_UNUSED_RESULT;
+/// JSON string representation for easier transport. Returns nil if params contain non-JSON values.
+- (NSString * _Nullable)toJSONStringWithPrettyPrinted:(BOOL)prettyPrinted SWIFT_WARN_UNUSED_RESULT;
+/// Notification payload for NotificationCenter (NOT user PII - just event data)
+/// Contains event data as dictionary + JSON string for easy consumption
+@property (nonatomic, readonly, copy) NSDictionary * _Nonnull notificationPayload;
+/// @deprecated Use notificationPayload instead. This name is confusing (not user PII).
+/// Kept for backward compatibility.
+@property (nonatomic, readonly, copy) NSDictionary * _Nonnull userInfo;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// Event listener protocol for receiving SDK events
+/// Events are delivered on main queue by default.
+/// If you need a different queue, switch inside onEvent().
+SWIFT_PROTOCOL("_TtP8FinvuSDK18FinvuEventListener_")
+@protocol FinvuEventListener
+/// Called when an event occurs
+/// @param event The event object containing all event data
+- (void)onEvent:(FinvuEvent * _Nonnull)event;
+@end
+
+
+/// Thread-safe, optimized event tracker with lazy initialization
+/// <ul>
+///   <li>
+///     Only initializes when first listener is added
+///   </li>
+///   <li>
+///     Resets all data when last listener is removed
+///   </li>
+///   <li>
+///     No memory/thread overhead until actively used
+///   </li>
+///   <li>
+///     Uses lightweight locks (matching Android’s thread-safe collections approach)
+///   </li>
+/// </ul>
+SWIFT_CLASS("_TtC8FinvuSDK17FinvuEventTracker")
+@interface FinvuEventTracker : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSNotificationName _Nonnull eventNotificationName;)
++ (NSNotificationName _Nonnull)eventNotificationName SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) FinvuEventTracker * _Nonnull shared;)
++ (FinvuEventTracker * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+/// Enable/disable event tracking (thread-safe)
+/// Events are disabled by default. You must call setEventsEnabled(true)
+/// to start tracking events, even if listeners are added.
+/// @param enabled True to enable event tracking, false to disable
+- (void)setEventsEnabled:(BOOL)enabled;
+/// Add event listener (thread-safe)
+/// Initializes tracker on first listener
+/// Uses locks directly (matching Android’s thread-safe collections approach)
+- (void)addEventListener:(id <FinvuEventListener> _Nonnull)listener;
+/// Remove event listener (thread-safe)
+/// Cleans up and resets counters when last listener removed (matches Android behavior)
+/// Uses locks directly (matching Android’s thread-safe collections approach)
+- (void)removeEventListener:(id <FinvuEventListener> _Nonnull)listener;
+/// Track event - optimized for performance
+/// <ul>
+///   <li>
+///     Fast path if events disabled
+///   </li>
+///   <li>
+///     Minimal allocations
+///   </li>
+///   <li>
+///     Async processing to avoid blocking caller
+///   </li>
+///   <li>
+///     Always posts notifications (even without listeners) for parent app bridges
+///   </li>
+/// </ul>
+- (void)track:(NSString * _Nonnull)eventName params:(NSDictionary<NSString *, id> * _Nonnull)params;
+/// Register custom events (thread-safe)
+/// Note: Internal method - EventDefinition is not exposed to Objective-C
+- (void)registerCustomEvents:(NSDictionary<NSString *, EventDefinition *> * _Nonnull)events;
+/// Register event aliases (thread-safe)
+- (void)registerAliases:(NSDictionary<NSString *, NSString *> * _Nonnull)aliases;
+/// Check if tracker is initialized (for testing)
+- (BOOL)isTrackerInitialized SWIFT_WARN_UNUSED_RESULT;
+@end
+
+/// Enum for all standard SDK events
+/// Use these instead of string literals to avoid typos
+typedef SWIFT_ENUM(NSInteger, FinvuEventType, open) {
+  FinvuEventTypeWebsocketConnected = 0,
+  FinvuEventTypeWebsocketDisconnected = 1,
+  FinvuEventTypeConsentRequestValid = 2,
+  FinvuEventTypeConsentRequestInvalid = 3,
+  FinvuEventTypeLoginInitiated = 4,
+  FinvuEventTypeLoginOtpGenerated = 5,
+  FinvuEventTypeLoginOtpFailed = 6,
+  FinvuEventTypeLoginOtpLocked = 7,
+  FinvuEventTypeLoginOtpVerified = 8,
+  FinvuEventTypeLoginOtpNotVerified = 9,
+  FinvuEventTypeLoginWithSnaSucceeded = 10,
+  FinvuEventTypeLoginSnaTokenVerified = 11,
+  FinvuEventTypeLoginSnaFailed = 12,
+  FinvuEventTypeLoginFallbackInitiated = 13,
+  FinvuEventTypeDiscoveryInitiated = 14,
+  FinvuEventTypeAccountsDiscovered = 15,
+  FinvuEventTypeDiscoveryFailed = 16,
+  FinvuEventTypeAccountsNotDiscovered = 17,
+  FinvuEventTypeLinkingInitiated = 18,
+  FinvuEventTypeLinkingOtpGenerated = 19,
+  FinvuEventTypeLinkingOtpFailed = 20,
+  FinvuEventTypeLinkingSuccess = 21,
+  FinvuEventTypeLinkingFailure = 22,
+  FinvuEventTypeLinkedAccountsSummary = 23,
+  FinvuEventTypeConsentApproved = 24,
+  FinvuEventTypeConsentDenied = 25,
+  FinvuEventTypeApproveConsentFailed = 26,
+  FinvuEventTypeConsentHandleFailed = 27,
+  FinvuEventTypeGetConsentStatusFailed = 28,
+  FinvuEventTypeSessionError = 29,
+  FinvuEventTypeSessionFailure = 30,
+};
+
+
 SWIFT_CLASS_NAMED("FinvuLoginResponse")
 @interface FinvuLoginResponse : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -1642,6 +1993,61 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) FinvuManager * _Nonnul
 + (void)setShared:(FinvuManager * _Nonnull)value;
 - (void)setCompletionDispatchQueueWithQueue:(dispatch_queue_t _Nonnull)queue;
 - (void)initializeWithConfig:(id <FinvuConfig> _Nonnull)config;
+/// Add an event listener
+/// @param listener The event listener to add
+- (void)addEventListener:(id <FinvuEventListener> _Nonnull)listener;
+/// Remove an event listener
+/// @param listener The event listener to remove
+- (void)removeEventListener:(id <FinvuEventListener> _Nonnull)listener;
+/// Enable or disable event tracking
+/// Events are disabled by default. You must call setEventsEnabled(true)
+/// to start tracking events, even if listeners are added.
+/// @param enabled True to enable, false to disable
+- (void)setEventsEnabled:(BOOL)enabled;
+/// Register custom events
+/// Custom events allow you to track events specific to your app.
+/// They follow the same structure as standard events.
+/// Example:
+/// \code
+/// let customEvents = [
+///     "CUSTOM_BUTTON_CLICKED": EventDefinition(category: "ui"),
+///     "CUSTOM_API_CALLED": EventDefinition(category: "api")
+/// ]
+/// finvuManager.registerCustomEvents(customEvents)
+///
+/// \endcodeThen track them:
+/// \code
+/// FinvuEventTracker.shared.track("CUSTOM_BUTTON_CLICKED", params: ["buttonId": "login"])
+///
+/// \endcode@param events Dictionary of event name to EventDefinition
+- (void)registerCustomEvents:(NSDictionary<NSString *, EventDefinition *> * _Nonnull)events;
+/// Register event aliases
+/// Aliases allow you to use custom names for standard events.
+/// Useful for analytics or when integrating with third-party tools.
+/// Example:
+/// \code
+/// let aliases = [
+///     "LOGIN_OTP_VERIFIED": "otp_sent",
+///     "WEBSOCKET_CONNECTED": "connection_established"
+/// ]
+/// finvuManager.registerAliases(aliases)
+///
+/// \endcodeWhen events are tracked, the alias will be used instead of the original name.
+/// @param aliases Dictionary of standard event name to alias
+- (void)registerAliases:(NSDictionary<NSString *, NSString *> * _Nonnull)aliases;
+/// Track an event
+/// Track a standard SDK event or a custom event that has been registered.
+/// Example:
+/// \code
+/// // Track a standard event
+/// finvuManager.track("LOGIN_INITIATED")
+///
+/// // Track an event with parameters
+/// finvuManager.track("CUSTOM_BUTTON_CLICKED", params: ["buttonId": "login"])
+///
+/// \endcode@param eventName The name of the event to track
+/// @param params Optional dictionary of event parameters
+- (void)track:(NSString * _Nonnull)eventName params:(NSDictionary<NSString *, id> * _Nonnull)params;
 - (void)connectWithCompletion:(void (^ _Nonnull)(NSError * _Nullable))completion;
 - (void)connect;
 - (void)disconnect;
