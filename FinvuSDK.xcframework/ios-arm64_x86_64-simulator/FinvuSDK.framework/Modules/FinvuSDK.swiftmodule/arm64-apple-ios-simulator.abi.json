@@ -27430,19 +27430,13 @@
           {
             "kind": "Function",
             "name": "finvuError",
-            "printedName": "finvuError(code:message:userInfo:)",
+            "printedName": "finvuError(code:message:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "NSError",
                 "printedName": "Foundation.NSError",
                 "usr": "c:objc(cs)NSError"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "FinvuErrorCode",
-                "printedName": "FinvuSDK.FinvuErrorCode",
-                "usr": "s:8FinvuSDK0A9ErrorCodeO"
               },
               {
                 "kind": "TypeNominal",
@@ -27461,35 +27455,21 @@
               {
                 "kind": "TypeNominal",
                 "name": "Optional",
-                "printedName": "[Swift.String : Any]?",
+                "printedName": "Swift.String?",
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Dictionary",
-                    "printedName": "[Swift.String : Any]",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "ProtocolComposition",
-                        "printedName": "Any"
-                      }
-                    ],
-                    "usr": "s:SD"
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
                   }
                 ],
-                "hasDefaultArg": true,
                 "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:So7NSErrorC8FinvuSDKE10finvuError4code7message8userInfoAbC0bE4CodeO_SSSgSDySSypGSgtFZ",
-            "mangledName": "$sSo7NSErrorC8FinvuSDKE10finvuError4code7message8userInfoAbC0bE4CodeO_SSSgSDySSypGSgtFZ",
+            "usr": "s:So7NSErrorC8FinvuSDKE10finvuError4code7messageABSSSg_AGtFZ",
+            "mangledName": "$sSo7NSErrorC8FinvuSDKE10finvuError4code7messageABSSSg_AGtFZ",
             "moduleName": "FinvuSDK",
             "static": true,
             "declAttributes": [
@@ -28738,49 +28718,49 @@
     {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/models\/Consent.swift",
       "kind": "StringLiteral",
-      "offset": 18710,
+      "offset": 18686,
       "length": 19,
       "value": "\"WEALTH_MANAGEMENT\""
     },
     {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/models\/Consent.swift",
       "kind": "StringLiteral",
-      "offset": 18766,
+      "offset": 18742,
       "length": 28,
       "value": "\"CUSTOMER_SPENDING_PATTERNS\""
     },
     {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/models\/Consent.swift",
       "kind": "StringLiteral",
-      "offset": 18826,
+      "offset": 18802,
       "length": 22,
       "value": "\"AGGREGATED_STATEMENT\""
     },
     {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/models\/Consent.swift",
       "kind": "StringLiteral",
-      "offset": 18889,
+      "offset": 18865,
       "length": 33,
       "value": "\"CONSENT_FOR_MONITORING_ACCOUNTS\""
     },
     {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/models\/Consent.swift",
       "kind": "StringLiteral",
-      "offset": 18949,
+      "offset": 18925,
       "length": 18,
       "value": "\"ONE_TIME_CONSENT\""
     },
     {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/models\/Consent.swift",
       "kind": "StringLiteral",
-      "offset": 20846,
+      "offset": 20822,
       "length": 5,
       "value": "\"FIP\""
     },
     {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/models\/Consent.swift",
       "kind": "StringLiteral",
-      "offset": 20876,
+      "offset": 20852,
       "length": 10,
       "value": "\"Accounts\""
     },
@@ -29716,6 +29696,20 @@
       "value": "\"RECORD-NOT-FOUND\""
     },
     {
+      "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/FinvuConstatns.swift",
+      "kind": "StringLiteral",
+      "offset": 6726,
+      "length": 6,
+      "value": "\"8000\""
+    },
+    {
+      "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/FinvuConstatns.swift",
+      "kind": "StringLiteral",
+      "offset": 6757,
+      "length": 6,
+      "value": "\"9000\""
+    },
+    {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/events\/FinvuEvent.swift",
       "kind": "Dictionary",
       "offset": 1092,
@@ -30348,7 +30342,7 @@
     {
       "filePath": "\/Users\/pranad\/Documents\/Projects\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Client\/Classes\/FinvuManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 19442,
+      "offset": 19432,
       "length": 5,
       "value": "false"
     },
