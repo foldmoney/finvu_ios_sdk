@@ -97,7 +97,13 @@ public enum ConsentFiType : Swift.String, Swift.CaseIterable {
   }
 }
 extension Foundation.NSError {
-  public static func finvuError(code: FinvuSDK.FinvuErrorCode, message: Swift.String?, userInfo: [Swift.String : Any]? = nil) -> Foundation.NSError
+  public static func finvuError(code: Swift.String?, message: Swift.String?) -> Foundation.NSError
+  public var errorCode: Swift.String? {
+    get
+  }
+  public var errorMessage: Swift.String? {
+    get
+  }
 }
 @objc public class EventDefinition : ObjectiveC.NSObject {
   final public let category: Swift.String
