@@ -12,25 +12,21 @@ let package = Package(
             targets: ["FinvuSDKWrapper"]
         )
     ],
+    dependencies: [
+        .package(url: "https://github.com/daltoniam/Starscream.git", from: "4.0.8"),
+        .package(url: "https://github.com/datatheorem/TrustKit.git", from: "3.0.7")
+    ],
     targets: [
         .binaryTarget(
             name: "FinvuSDK",
             path: "FinvuSDK.xcframework"
         ),
-        .binaryTarget(
-            name: "Starscream",
-            path: "Starscream.xcframework"
-        ),
-        .binaryTarget(
-            name: "TrustKit",
-            path: "TrustKit.xcframework"
-        ),
         .target(
             name: "FinvuSDKWrapper",
             dependencies: [
                 "FinvuSDK",
-                "Starscream",
-                "TrustKit"
+                .product(name: "Starscream", package: "Starscream"),
+                .product(name: "TrustKit", package: "TrustKit")
             ],
             path: "Sources/FinvuSDKWrapper"
         )
