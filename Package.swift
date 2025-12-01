@@ -9,7 +9,7 @@ let package = Package(
     products: [
         .library(
             name: "FinvuSDK",
-            targets: ["FinvuSDKWrapper"]
+            targets: ["FinvuSDK", "Starscream", "TrustKit"]
         )
     ],
     targets: [
@@ -24,15 +24,6 @@ let package = Package(
         .binaryTarget(
             name: "TrustKit",
             path: "TrustKit.xcframework"
-        ),
-        .target(
-            name: "FinvuSDKWrapper",
-            dependencies: [
-                "FinvuSDK",
-                "Starscream",
-                "TrustKit"
-            ],
-            path: "Sources/FinvuSDKWrapper"
         )
     ]
 )
