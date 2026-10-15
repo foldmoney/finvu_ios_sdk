@@ -9,13 +9,17 @@ let package = Package(
     products: [
         .library(
             name: "FinvuSDK",
-            targets: ["FinvuSDK", "Starscream", "TrustKit"]
+            targets: ["FinvuSDK", "FinvuAuthenticationSDK", "Starscream", "TrustKit"]
         )
     ],
     targets: [
         .binaryTarget(
             name: "FinvuSDK",
             path: "FinvuSDK.xcframework"
+        ),
+        .binaryTarget(
+            name: "FinvuAuthenticationSDK",
+            path: "FinvuAuthenticationSDK.xcframework"
         ),
         .binaryTarget(
             name: "Starscream",
