@@ -25984,6 +25984,128 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "newUser",
+            "printedName": "newUser",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK0A9MfaClientC7newUserSbSgvp",
+            "mangledName": "$s8FinvuSDK0A9MfaClientC7newUserSbSgvp",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK0A9MfaClientC7newUserSbSgvg",
+                "mangledName": "$s8FinvuSDK0A9MfaClientC7newUserSbSgvg",
+                "moduleName": "FinvuSDK",
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "hasLinkedAccounts",
+            "printedName": "hasLinkedAccounts",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK0A9MfaClientC17hasLinkedAccountsSbSgvp",
+            "mangledName": "$s8FinvuSDK0A9MfaClientC17hasLinkedAccountsSbSgvp",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK0A9MfaClientC17hasLinkedAccountsSbSgvg",
+                "mangledName": "$s8FinvuSDK0A9MfaClientC17hasLinkedAccountsSbSgvg",
+                "moduleName": "FinvuSDK",
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Function",
             "name": "login",
             "printedName": "login(_:)",
@@ -28336,6 +28458,13 @@
             "mangledName": "$ss9EscapableP"
           }
         ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "FinvuSDK"
       },
       {
         "kind": "Import",
@@ -31104,6 +31233,195 @@
           },
           {
             "kind": "Var",
+            "name": "factorQuestionLinkedAccount",
+            "printedName": "factorQuestionLinkedAccount",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK12MfaConstantsO27factorQuestionLinkedAccountSSvpZ",
+            "mangledName": "$s8FinvuSDK12MfaConstantsO27factorQuestionLinkedAccountSSvpZ",
+            "moduleName": "FinvuSDK",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK12MfaConstantsO27factorQuestionLinkedAccountSSvgZ",
+                "mangledName": "$s8FinvuSDK12MfaConstantsO27factorQuestionLinkedAccountSSvgZ",
+                "moduleName": "FinvuSDK",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "factorQuestionPan",
+            "printedName": "factorQuestionPan",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK12MfaConstantsO17factorQuestionPanSSvpZ",
+            "mangledName": "$s8FinvuSDK12MfaConstantsO17factorQuestionPanSSvpZ",
+            "moduleName": "FinvuSDK",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK12MfaConstantsO17factorQuestionPanSSvgZ",
+                "mangledName": "$s8FinvuSDK12MfaConstantsO17factorQuestionPanSSvgZ",
+                "moduleName": "FinvuSDK",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "factorEmailOtp",
+            "printedName": "factorEmailOtp",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK12MfaConstantsO14factorEmailOtpSSvpZ",
+            "mangledName": "$s8FinvuSDK12MfaConstantsO14factorEmailOtpSSvpZ",
+            "moduleName": "FinvuSDK",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK12MfaConstantsO14factorEmailOtpSSvgZ",
+                "mangledName": "$s8FinvuSDK12MfaConstantsO14factorEmailOtpSSvgZ",
+                "moduleName": "FinvuSDK",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "factorEmailLink",
+            "printedName": "factorEmailLink",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK12MfaConstantsO15factorEmailLinkSSvpZ",
+            "mangledName": "$s8FinvuSDK12MfaConstantsO15factorEmailLinkSSvpZ",
+            "moduleName": "FinvuSDK",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK12MfaConstantsO15factorEmailLinkSSvgZ",
+                "mangledName": "$s8FinvuSDK12MfaConstantsO15factorEmailLinkSSvgZ",
+                "moduleName": "FinvuSDK",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "requirementVerification",
             "printedName": "requirementVerification",
             "children": [
@@ -31198,6 +31516,53 @@
           },
           {
             "kind": "Var",
+            "name": "purposePinRecovery",
+            "printedName": "purposePinRecovery",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK12MfaConstantsO18purposePinRecoverySSvpZ",
+            "mangledName": "$s8FinvuSDK12MfaConstantsO18purposePinRecoverySSvpZ",
+            "moduleName": "FinvuSDK",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK12MfaConstantsO18purposePinRecoverySSvgZ",
+                "mangledName": "$s8FinvuSDK12MfaConstantsO18purposePinRecoverySSvgZ",
+                "moduleName": "FinvuSDK",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "purposePinReset",
             "printedName": "purposePinReset",
             "children": [
@@ -31213,10 +31578,12 @@
             "mangledName": "$s8FinvuSDK12MfaConstantsO15purposePinResetSSvpZ",
             "moduleName": "FinvuSDK",
             "static": true,
+            "deprecated": true,
             "declAttributes": [
               "HasInitialValue",
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "Available"
             ],
             "isLet": true,
             "hasStorage": true,
@@ -31515,6 +31882,66 @@
                 "accessorKind": "get"
               }
             ]
+          },
+          {
+            "kind": "Var",
+            "name": "support",
+            "printedName": "support",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "FinvuSDK.RecoverySupport?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "RecoverySupport",
+                    "printedName": "FinvuSDK.RecoverySupport",
+                    "usr": "s:8FinvuSDK15RecoverySupportV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK15ValidationErrorV7supportAA15RecoverySupportVSgvp",
+            "mangledName": "$s8FinvuSDK15ValidationErrorV7supportAA15RecoverySupportVSgvp",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "FinvuSDK.RecoverySupport?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "RecoverySupport",
+                        "printedName": "FinvuSDK.RecoverySupport",
+                        "usr": "s:8FinvuSDK15RecoverySupportV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK15ValidationErrorV7supportAA15RecoverySupportVSgvg",
+                "mangledName": "$s8FinvuSDK15ValidationErrorV7supportAA15RecoverySupportVSgvg",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
           }
         ],
         "declKind": "Struct",
@@ -31522,7 +31949,1463 @@
         "mangledName": "$s8FinvuSDK15ValidationErrorV",
         "moduleName": "FinvuSDK",
         "declAttributes": [
-          "AccessControl"
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "RecoverySupport",
+        "printedName": "RecoverySupport",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "email",
+            "printedName": "email",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK15RecoverySupportV5emailSSSgvp",
+            "mangledName": "$s8FinvuSDK15RecoverySupportV5emailSSSgvp",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK15RecoverySupportV5emailSSSgvg",
+                "mangledName": "$s8FinvuSDK15RecoverySupportV5emailSSSgvg",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "phone",
+            "printedName": "phone",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK15RecoverySupportV5phoneSSSgvp",
+            "mangledName": "$s8FinvuSDK15RecoverySupportV5phoneSSSgvp",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK15RecoverySupportV5phoneSSSgvg",
+                "mangledName": "$s8FinvuSDK15RecoverySupportV5phoneSSSgvg",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "message",
+            "printedName": "message",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK15RecoverySupportV7messageSSSgvp",
+            "mangledName": "$s8FinvuSDK15RecoverySupportV7messageSSSgvp",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK15RecoverySupportV7messageSSSgvg",
+                "mangledName": "$s8FinvuSDK15RecoverySupportV7messageSSSgvg",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "RecoverySupport",
+                "printedName": "FinvuSDK.RecoverySupport",
+                "usr": "s:8FinvuSDK15RecoverySupportV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "RecoverySupport",
+                "printedName": "FinvuSDK.RecoverySupport",
+                "usr": "s:8FinvuSDK15RecoverySupportV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8FinvuSDK15RecoverySupportV2eeoiySbAC_ACtFZ",
+            "mangledName": "$s8FinvuSDK15RecoverySupportV2eeoiySbAC_ACtFZ",
+            "moduleName": "FinvuSDK",
+            "static": true,
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:8FinvuSDK15RecoverySupportV",
+        "mangledName": "$s8FinvuSDK15RecoverySupportV",
+        "moduleName": "FinvuSDK",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "RecoveryAccount",
+        "printedName": "RecoveryAccount",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "fipId",
+            "printedName": "fipId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK15RecoveryAccountV5fipIdSSvp",
+            "mangledName": "$s8FinvuSDK15RecoveryAccountV5fipIdSSvp",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK15RecoveryAccountV5fipIdSSvg",
+                "mangledName": "$s8FinvuSDK15RecoveryAccountV5fipIdSSvg",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "fiType",
+            "printedName": "fiType",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK15RecoveryAccountV6fiTypeSSSgvp",
+            "mangledName": "$s8FinvuSDK15RecoveryAccountV6fiTypeSSSgvp",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK15RecoveryAccountV6fiTypeSSSgvg",
+                "mangledName": "$s8FinvuSDK15RecoveryAccountV6fiTypeSSSgvg",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "accType",
+            "printedName": "accType",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK15RecoveryAccountV7accTypeSSSgvp",
+            "mangledName": "$s8FinvuSDK15RecoveryAccountV7accTypeSSSgvp",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK15RecoveryAccountV7accTypeSSSgvg",
+                "mangledName": "$s8FinvuSDK15RecoveryAccountV7accTypeSSSgvg",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "RecoveryAccount",
+                "printedName": "FinvuSDK.RecoveryAccount",
+                "usr": "s:8FinvuSDK15RecoveryAccountV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "RecoveryAccount",
+                "printedName": "FinvuSDK.RecoveryAccount",
+                "usr": "s:8FinvuSDK15RecoveryAccountV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8FinvuSDK15RecoveryAccountV2eeoiySbAC_ACtFZ",
+            "mangledName": "$s8FinvuSDK15RecoveryAccountV2eeoiySbAC_ACtFZ",
+            "moduleName": "FinvuSDK",
+            "static": true,
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:8FinvuSDK15RecoveryAccountV",
+        "mangledName": "$s8FinvuSDK15RecoveryAccountV",
+        "moduleName": "FinvuSDK",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "RecoveryEmail",
+        "printedName": "RecoveryEmail",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "emailHash",
+            "printedName": "emailHash",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK13RecoveryEmailV9emailHashSSvp",
+            "mangledName": "$s8FinvuSDK13RecoveryEmailV9emailHashSSvp",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK13RecoveryEmailV9emailHashSSvg",
+                "mangledName": "$s8FinvuSDK13RecoveryEmailV9emailHashSSvg",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "maskedEmail",
+            "printedName": "maskedEmail",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK13RecoveryEmailV06maskedD0SSvp",
+            "mangledName": "$s8FinvuSDK13RecoveryEmailV06maskedD0SSvp",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK13RecoveryEmailV06maskedD0SSvg",
+                "mangledName": "$s8FinvuSDK13RecoveryEmailV06maskedD0SSvg",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "primary",
+            "printedName": "primary",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK13RecoveryEmailV7primarySbvp",
+            "mangledName": "$s8FinvuSDK13RecoveryEmailV7primarySbvp",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK13RecoveryEmailV7primarySbvg",
+                "mangledName": "$s8FinvuSDK13RecoveryEmailV7primarySbvg",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "selected",
+            "printedName": "selected",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK13RecoveryEmailV8selectedSbvp",
+            "mangledName": "$s8FinvuSDK13RecoveryEmailV8selectedSbvp",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK13RecoveryEmailV8selectedSbvg",
+                "mangledName": "$s8FinvuSDK13RecoveryEmailV8selectedSbvg",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "RecoveryEmail",
+                "printedName": "FinvuSDK.RecoveryEmail",
+                "usr": "s:8FinvuSDK13RecoveryEmailV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "RecoveryEmail",
+                "printedName": "FinvuSDK.RecoveryEmail",
+                "usr": "s:8FinvuSDK13RecoveryEmailV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8FinvuSDK13RecoveryEmailV2eeoiySbAC_ACtFZ",
+            "mangledName": "$s8FinvuSDK13RecoveryEmailV2eeoiySbAC_ACtFZ",
+            "moduleName": "FinvuSDK",
+            "static": true,
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:8FinvuSDK13RecoveryEmailV",
+        "mangledName": "$s8FinvuSDK13RecoveryEmailV",
+        "moduleName": "FinvuSDK",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "RecoveryAccountAnswer",
+        "printedName": "RecoveryAccountAnswer",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "fipId",
+            "printedName": "fipId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK21RecoveryAccountAnswerV5fipIdSSvp",
+            "mangledName": "$s8FinvuSDK21RecoveryAccountAnswerV5fipIdSSvp",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK21RecoveryAccountAnswerV5fipIdSSvg",
+                "mangledName": "$s8FinvuSDK21RecoveryAccountAnswerV5fipIdSSvg",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "last4",
+            "printedName": "last4",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK21RecoveryAccountAnswerV5last4SSvp",
+            "mangledName": "$s8FinvuSDK21RecoveryAccountAnswerV5last4SSvp",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK21RecoveryAccountAnswerV5last4SSvg",
+                "mangledName": "$s8FinvuSDK21RecoveryAccountAnswerV5last4SSvg",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "fiType",
+            "printedName": "fiType",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK21RecoveryAccountAnswerV6fiTypeSSSgvp",
+            "mangledName": "$s8FinvuSDK21RecoveryAccountAnswerV6fiTypeSSSgvp",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK21RecoveryAccountAnswerV6fiTypeSSSgvg",
+                "mangledName": "$s8FinvuSDK21RecoveryAccountAnswerV6fiTypeSSSgvg",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "accType",
+            "printedName": "accType",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK21RecoveryAccountAnswerV7accTypeSSSgvp",
+            "mangledName": "$s8FinvuSDK21RecoveryAccountAnswerV7accTypeSSSgvp",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK21RecoveryAccountAnswerV7accTypeSSSgvg",
+                "mangledName": "$s8FinvuSDK21RecoveryAccountAnswerV7accTypeSSSgvg",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(fipId:last4:fiType:accType:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "RecoveryAccountAnswer",
+                "printedName": "FinvuSDK.RecoveryAccountAnswer",
+                "usr": "s:8FinvuSDK21RecoveryAccountAnswerV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:8FinvuSDK21RecoveryAccountAnswerV5fipId5last46fiType03accJ0ACSS_S2SSgAHtcfc",
+            "mangledName": "$s8FinvuSDK21RecoveryAccountAnswerV5fipId5last46fiType03accJ0ACSS_S2SSgAHtcfc",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:8FinvuSDK21RecoveryAccountAnswerV",
+        "mangledName": "$s8FinvuSDK21RecoveryAccountAnswerV",
+        "moduleName": "FinvuSDK",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "RecoveryInfo",
+        "printedName": "RecoveryInfo",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "method",
+            "printedName": "method",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK12RecoveryInfoV6methodSSSgvp",
+            "mangledName": "$s8FinvuSDK12RecoveryInfoV6methodSSSgvp",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK12RecoveryInfoV6methodSSSgvg",
+                "mangledName": "$s8FinvuSDK12RecoveryInfoV6methodSSSgvg",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "availableMethods",
+            "printedName": "availableMethods",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK12RecoveryInfoV16availableMethodsSaySSGvp",
+            "mangledName": "$s8FinvuSDK12RecoveryInfoV16availableMethodsSaySSGvp",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK12RecoveryInfoV16availableMethodsSaySSGvg",
+                "mangledName": "$s8FinvuSDK12RecoveryInfoV16availableMethodsSaySSGvg",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "accounts",
+            "printedName": "accounts",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[FinvuSDK.RecoveryAccount]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[FinvuSDK.RecoveryAccount]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "RecoveryAccount",
+                        "printedName": "FinvuSDK.RecoveryAccount",
+                        "usr": "s:8FinvuSDK15RecoveryAccountV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK12RecoveryInfoV8accountsSayAA0C7AccountVGSgvp",
+            "mangledName": "$s8FinvuSDK12RecoveryInfoV8accountsSayAA0C7AccountVGSgvp",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[FinvuSDK.RecoveryAccount]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[FinvuSDK.RecoveryAccount]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "RecoveryAccount",
+                            "printedName": "FinvuSDK.RecoveryAccount",
+                            "usr": "s:8FinvuSDK15RecoveryAccountV"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK12RecoveryInfoV8accountsSayAA0C7AccountVGSgvg",
+                "mangledName": "$s8FinvuSDK12RecoveryInfoV8accountsSayAA0C7AccountVGSgvg",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "minAccountsRequired",
+            "printedName": "minAccountsRequired",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK12RecoveryInfoV19minAccountsRequiredSiSgvp",
+            "mangledName": "$s8FinvuSDK12RecoveryInfoV19minAccountsRequiredSiSgvp",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Int?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK12RecoveryInfoV19minAccountsRequiredSiSgvg",
+                "mangledName": "$s8FinvuSDK12RecoveryInfoV19minAccountsRequiredSiSgvg",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "emails",
+            "printedName": "emails",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[FinvuSDK.RecoveryEmail]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[FinvuSDK.RecoveryEmail]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "RecoveryEmail",
+                        "printedName": "FinvuSDK.RecoveryEmail",
+                        "usr": "s:8FinvuSDK13RecoveryEmailV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK12RecoveryInfoV6emailsSayAA0C5EmailVGSgvp",
+            "mangledName": "$s8FinvuSDK12RecoveryInfoV6emailsSayAA0C5EmailVGSgvp",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[FinvuSDK.RecoveryEmail]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[FinvuSDK.RecoveryEmail]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "RecoveryEmail",
+                            "printedName": "FinvuSDK.RecoveryEmail",
+                            "usr": "s:8FinvuSDK13RecoveryEmailV"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK12RecoveryInfoV6emailsSayAA0C5EmailVGSgvg",
+                "mangledName": "$s8FinvuSDK12RecoveryInfoV6emailsSayAA0C5EmailVGSgvg",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "expiresAt",
+            "printedName": "expiresAt",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK12RecoveryInfoV9expiresAtSSSgvp",
+            "mangledName": "$s8FinvuSDK12RecoveryInfoV9expiresAtSSSgvp",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK12RecoveryInfoV9expiresAtSSSgvg",
+                "mangledName": "$s8FinvuSDK12RecoveryInfoV9expiresAtSSSgvg",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:8FinvuSDK12RecoveryInfoV",
+        "mangledName": "$s8FinvuSDK12RecoveryInfoV",
+        "moduleName": "FinvuSDK",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
         ],
         "conformances": [
           {
@@ -31913,6 +33796,226 @@
                 "accessorKind": "get"
               }
             ]
+          },
+          {
+            "kind": "Var",
+            "name": "newUser",
+            "printedName": "newUser",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK10MfaSessionV7newUserSbSgvp",
+            "mangledName": "$s8FinvuSDK10MfaSessionV7newUserSbSgvp",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK10MfaSessionV7newUserSbSgvg",
+                "mangledName": "$s8FinvuSDK10MfaSessionV7newUserSbSgvg",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK10MfaSessionV7newUserSbSgvs",
+                "mangledName": "$s8FinvuSDK10MfaSessionV7newUserSbSgvs",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK10MfaSessionV7newUserSbSgvM",
+                "mangledName": "$s8FinvuSDK10MfaSessionV7newUserSbSgvM",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "hasLinkedAccounts",
+            "printedName": "hasLinkedAccounts",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK10MfaSessionV17hasLinkedAccountsSbSgvp",
+            "mangledName": "$s8FinvuSDK10MfaSessionV17hasLinkedAccountsSbSgvp",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK10MfaSessionV17hasLinkedAccountsSbSgvg",
+                "mangledName": "$s8FinvuSDK10MfaSessionV17hasLinkedAccountsSbSgvg",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK10MfaSessionV17hasLinkedAccountsSbSgvs",
+                "mangledName": "$s8FinvuSDK10MfaSessionV17hasLinkedAccountsSbSgvs",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK10MfaSessionV17hasLinkedAccountsSbSgvM",
+                "mangledName": "$s8FinvuSDK10MfaSessionV17hasLinkedAccountsSbSgvM",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
           }
         ],
         "declKind": "Struct",
@@ -31920,7 +34023,8 @@
         "mangledName": "$s8FinvuSDK10MfaSessionV",
         "moduleName": "FinvuSDK",
         "declAttributes": [
-          "AccessControl"
+          "AccessControl",
+          "RawDocComment"
         ],
         "conformances": [
           {
@@ -33545,9 +35649,120 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "emailId",
+            "printedName": "emailId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK11LoginParamsV7emailIdSSSgvp",
+            "mangledName": "$s8FinvuSDK11LoginParamsV7emailIdSSSgvp",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK11LoginParamsV7emailIdSSSgvg",
+                "mangledName": "$s8FinvuSDK11LoginParamsV7emailIdSSSgvg",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK11LoginParamsV7emailIdSSSgvs",
+                "mangledName": "$s8FinvuSDK11LoginParamsV7emailIdSSSgvs",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK11LoginParamsV7emailIdSSSgvM",
+                "mangledName": "$s8FinvuSDK11LoginParamsV7emailIdSSSgvM",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(mobileNumber:username:consentHandle:handleId:clientContext:supportedFactors:useEncConsent:finalizeSession:selectFactorChoice:)",
+            "printedName": "init(mobileNumber:username:consentHandle:handleId:clientContext:supportedFactors:useEncConsent:finalizeSession:selectFactorChoice:emailId:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -33686,11 +35901,26 @@
                 "printedName": "Swift.Bool",
                 "hasDefaultArg": true,
                 "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:8FinvuSDK11LoginParamsV12mobileNumber8username13consentHandle8handleId13clientContext16supportedFactors13useEncConsent15finalizeSession18selectFactorChoiceACSSSg_A3MSDySSypGSgAA09SupportedO0VSgS2bSgSbtcfc",
-            "mangledName": "$s8FinvuSDK11LoginParamsV12mobileNumber8username13consentHandle8handleId13clientContext16supportedFactors13useEncConsent15finalizeSession18selectFactorChoiceACSSSg_A3MSDySSypGSgAA09SupportedO0VSgS2bSgSbtcfc",
+            "usr": "s:8FinvuSDK11LoginParamsV12mobileNumber8username13consentHandle8handleId13clientContext16supportedFactors13useEncConsent15finalizeSession18selectFactorChoice05emailK0ACSSSg_A3NSDySSypGSgAA09SupportedO0VSgS2bSgSbANtcfc",
+            "mangledName": "$s8FinvuSDK11LoginParamsV12mobileNumber8username13consentHandle8handleId13clientContext16supportedFactors13useEncConsent15finalizeSession18selectFactorChoice05emailK0ACSSSg_A3NSDySSypGSgAA09SupportedO0VSgS2bSgSbANtcfc",
             "moduleName": "FinvuSDK",
             "declAttributes": [
               "AccessControl"
@@ -34396,6 +36626,342 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "recovery",
+            "printedName": "recovery",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "FinvuSDK.RecoveryInfo?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "RecoveryInfo",
+                    "printedName": "FinvuSDK.RecoveryInfo",
+                    "usr": "s:8FinvuSDK12RecoveryInfoV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK12MfaInputStepC8recoveryAA12RecoveryInfoVSgvp",
+            "mangledName": "$s8FinvuSDK12MfaInputStepC8recoveryAA12RecoveryInfoVSgvp",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "FinvuSDK.RecoveryInfo?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "RecoveryInfo",
+                        "printedName": "FinvuSDK.RecoveryInfo",
+                        "usr": "s:8FinvuSDK12RecoveryInfoV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK12MfaInputStepC8recoveryAA12RecoveryInfoVSgvg",
+                "mangledName": "$s8FinvuSDK12MfaInputStepC8recoveryAA12RecoveryInfoVSgvg",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "cancel",
+            "printedName": "cancel",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(() async -> any FinvuSDK.MfaStep)?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "() async -> any FinvuSDK.MfaStep",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MfaStep",
+                        "printedName": "any FinvuSDK.MfaStep",
+                        "usr": "s:8FinvuSDK7MfaStepP"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK12MfaInputStepC6cancelAA0cE0_pyYacSgvp",
+            "mangledName": "$s8FinvuSDK12MfaInputStepC6cancelAA0cE0_pyYacSgvp",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "(() async -> any FinvuSDK.MfaStep)?",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "() async -> any FinvuSDK.MfaStep",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "MfaStep",
+                            "printedName": "any FinvuSDK.MfaStep",
+                            "usr": "s:8FinvuSDK7MfaStepP"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Void",
+                            "printedName": "()"
+                          }
+                        ]
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK12MfaInputStepC6cancelAA0cE0_pyYacSgvg",
+                "mangledName": "$s8FinvuSDK12MfaInputStepC6cancelAA0cE0_pyYacSgvg",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "switchMethod",
+            "printedName": "switchMethod",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((Swift.String) async -> any FinvuSDK.MfaStep)?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.String) async -> any FinvuSDK.MfaStep",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MfaStep",
+                        "printedName": "any FinvuSDK.MfaStep",
+                        "usr": "s:8FinvuSDK7MfaStepP"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK12MfaInputStepC12switchMethodAA0cE0_pSSYacSgvp",
+            "mangledName": "$s8FinvuSDK12MfaInputStepC12switchMethodAA0cE0_pSSYacSgvp",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "((Swift.String) async -> any FinvuSDK.MfaStep)?",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(Swift.String) async -> any FinvuSDK.MfaStep",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "MfaStep",
+                            "printedName": "any FinvuSDK.MfaStep",
+                            "usr": "s:8FinvuSDK7MfaStepP"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ]
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK12MfaInputStepC12switchMethodAA0cE0_pSSYacSgvg",
+                "mangledName": "$s8FinvuSDK12MfaInputStepC12switchMethodAA0cE0_pSSYacSgvg",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "selectEmail",
+            "printedName": "selectEmail",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((Swift.String) async -> any FinvuSDK.MfaStep)?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.String) async -> any FinvuSDK.MfaStep",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MfaStep",
+                        "printedName": "any FinvuSDK.MfaStep",
+                        "usr": "s:8FinvuSDK7MfaStepP"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8FinvuSDK12MfaInputStepC11selectEmailAA0cE0_pSSYacSgvp",
+            "mangledName": "$s8FinvuSDK12MfaInputStepC11selectEmailAA0cE0_pSSYacSgvp",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "((Swift.String) async -> any FinvuSDK.MfaStep)?",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(Swift.String) async -> any FinvuSDK.MfaStep",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "MfaStep",
+                            "printedName": "any FinvuSDK.MfaStep",
+                            "usr": "s:8FinvuSDK7MfaStepP"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ]
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8FinvuSDK12MfaInputStepC11selectEmailAA0cE0_pSSYacSgvg",
+                "mangledName": "$s8FinvuSDK12MfaInputStepC11selectEmailAA0cE0_pSSYacSgvg",
+                "moduleName": "FinvuSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Function",
             "name": "submit",
             "printedName": "submit(_:)",
@@ -34420,6 +36986,43 @@
             "declAttributes": [
               "Final",
               "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "submit",
+            "printedName": "submit(accounts:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MfaStep",
+                "printedName": "any FinvuSDK.MfaStep",
+                "usr": "s:8FinvuSDK7MfaStepP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[FinvuSDK.RecoveryAccountAnswer]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "RecoveryAccountAnswer",
+                    "printedName": "FinvuSDK.RecoveryAccountAnswer",
+                    "usr": "s:8FinvuSDK21RecoveryAccountAnswerV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:8FinvuSDK12MfaInputStepC6submit8accountsAA0cE0_pSayAA21RecoveryAccountAnswerVG_tYaF",
+            "mangledName": "$s8FinvuSDK12MfaInputStepC6submit8accountsAA0cE0_pSayAA21RecoveryAccountAnswerVG_tYaF",
+            "moduleName": "FinvuSDK",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           }
@@ -37913,7 +40516,7 @@
       "kind": "StringLiteral",
       "offset": 522,
       "length": 7,
-      "value": "\"2.0.0\""
+      "value": "\"2.1.2\""
     },
     {
       "filePath": "\/Users\/jenilk\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/events\/FinvuEventTracker.swift",
@@ -38233,112 +40836,70 @@
     {
       "filePath": "\/Users\/jenilk\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/mfa\/FinvuMfaClient.swift",
       "kind": "StringLiteral",
-      "offset": 572,
+      "offset": 590,
       "length": 29,
       "value": "\"DEVICE_BINDING_NOT_ENROLLED\""
     },
     {
       "filePath": "\/Users\/jenilk\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/mfa\/FinvuMfaClient.swift",
       "kind": "StringLiteral",
-      "offset": 644,
+      "offset": 662,
       "length": 32,
       "value": "\"DEVICE_BINDING_KEY_INVALIDATED\""
     },
     {
       "filePath": "\/Users\/jenilk\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/mfa\/FinvuMfaClient.swift",
       "kind": "StringLiteral",
-      "offset": 718,
-      "length": 31,
-      "value": "\"DEVICE_BINDING_USER_CANCELLED\""
-    },
-    {
-      "filePath": "\/Users\/jenilk\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/mfa\/FinvuMfaClient.swift",
-      "kind": "StringLiteral",
-      "offset": 788,
-      "length": 28,
-      "value": "\"DEVICE_BINDING_AUTH_FAILED\""
-    },
-    {
-      "filePath": "\/Users\/jenilk\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/mfa\/FinvuMfaClient.swift",
-      "kind": "StringLiteral",
-      "offset": 861,
+      "offset": 739,
       "length": 34,
       "value": "\"DEVICE_BINDING_CHALLENGE_EXPIRED\""
     },
     {
       "filePath": "\/Users\/jenilk\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/mfa\/FinvuMfaClient.swift",
-      "kind": "StringLiteral",
-      "offset": 942,
-      "length": 36,
-      "value": "\"DEVICE_BINDING_VERIFICATION_FAILED\""
-    },
-    {
-      "filePath": "\/Users\/jenilk\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/mfa\/FinvuMfaClient.swift",
-      "kind": "StringLiteral",
-      "offset": 1024,
-      "length": 21,
-      "value": "\"MAX_DEVICES_REACHED\""
-    },
-    {
-      "filePath": "\/Users\/jenilk\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/mfa\/FinvuMfaClient.swift",
       "kind": "IntegerLiteral",
-      "offset": 2486,
+      "offset": 3086,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/jenilk\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/mfa\/FinvuMfaClient.swift",
       "kind": "IntegerLiteral",
-      "offset": 2536,
+      "offset": 3136,
       "length": 3,
       "value": "120"
     },
     {
       "filePath": "\/Users\/jenilk\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/mfa\/FinvuMfaClient.swift",
       "kind": "StringLiteral",
-      "offset": 3343,
+      "offset": 3993,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/jenilk\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/mfa\/FinvuMfaClient.swift",
       "kind": "StringLiteral",
-      "offset": 3364,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/jenilk\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/mfa\/FinvuMfaClient.swift",
-      "kind": "StringLiteral",
-      "offset": 3726,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/jenilk\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/mfa\/FinvuMfaClient.swift",
-      "kind": "StringLiteral",
-      "offset": 3749,
+      "offset": 4016,
       "length": 10,
       "value": "\"identity\""
     },
     {
       "filePath": "\/Users\/jenilk\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/mfa\/FinvuMfaClient.swift",
       "kind": "Array",
-      "offset": 3798,
+      "offset": 4065,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/jenilk\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/mfa\/FinvuMfaClient.swift",
       "kind": "Dictionary",
-      "offset": 4220,
+      "offset": 4581,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/jenilk\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/mfa\/FinvuMfaClient.swift",
       "kind": "BooleanLiteral",
-      "offset": 25684,
+      "offset": 23627,
       "length": 5,
       "value": "false"
     },
@@ -38539,6 +41100,41 @@
       "value": "\"DEVICE_BINDING\""
     },
     {
+      "filePath": "\/Users\/jenilk\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/mfa\/MfaPinRecovery.swift",
+      "kind": "StringLiteral",
+      "offset": 774,
+      "length": 25,
+      "value": "\"QUESTION_LINKED_ACCOUNT\""
+    },
+    {
+      "filePath": "\/Users\/jenilk\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/mfa\/MfaPinRecovery.swift",
+      "kind": "StringLiteral",
+      "offset": 829,
+      "length": 14,
+      "value": "\"QUESTION_PAN\""
+    },
+    {
+      "filePath": "\/Users\/jenilk\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/mfa\/MfaPinRecovery.swift",
+      "kind": "StringLiteral",
+      "offset": 878,
+      "length": 11,
+      "value": "\"EMAIL_OTP\""
+    },
+    {
+      "filePath": "\/Users\/jenilk\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/mfa\/MfaPinRecovery.swift",
+      "kind": "StringLiteral",
+      "offset": 925,
+      "length": 12,
+      "value": "\"EMAIL_LINK\""
+    },
+    {
+      "filePath": "\/Users\/jenilk\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/mfa\/MfaPinRecovery.swift",
+      "kind": "StringLiteral",
+      "offset": 1294,
+      "length": 33,
+      "value": "\"PIN recovery failed. Try again.\""
+    },
+    {
       "filePath": "\/Users\/jenilk\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/mfa\/MfaRouter.swift",
       "kind": "StringLiteral",
       "offset": 152,
@@ -38702,63 +41298,105 @@
     {
       "filePath": "\/Users\/jenilk\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/mfa\/MfaTypes.swift",
       "kind": "StringLiteral",
-      "offset": 535,
+      "offset": 616,
+      "length": 23,
+      "value": "\"questionLinkedAccount\""
+    },
+    {
+      "filePath": "\/Users\/jenilk\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/mfa\/MfaTypes.swift",
+      "kind": "StringLiteral",
+      "offset": 682,
+      "length": 13,
+      "value": "\"questionPan\""
+    },
+    {
+      "filePath": "\/Users\/jenilk\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/mfa\/MfaTypes.swift",
+      "kind": "StringLiteral",
+      "offset": 735,
+      "length": 10,
+      "value": "\"emailOtp\""
+    },
+    {
+      "filePath": "\/Users\/jenilk\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/mfa\/MfaTypes.swift",
+      "kind": "StringLiteral",
+      "offset": 786,
+      "length": 11,
+      "value": "\"emailLink\""
+    },
+    {
+      "filePath": "\/Users\/jenilk\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/mfa\/MfaTypes.swift",
+      "kind": "StringLiteral",
+      "offset": 847,
       "length": 14,
       "value": "\"verification\""
     },
     {
       "filePath": "\/Users\/jenilk\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/mfa\/MfaTypes.swift",
       "kind": "StringLiteral",
-      "offset": 596,
+      "offset": 908,
       "length": 12,
       "value": "\"enrollment\""
     },
     {
       "filePath": "\/Users\/jenilk\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/mfa\/MfaTypes.swift",
       "kind": "StringLiteral",
-      "offset": 650,
+      "offset": 965,
+      "length": 13,
+      "value": "\"pinRecovery\""
+    },
+    {
+      "filePath": "\/Users\/jenilk\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/mfa\/MfaTypes.swift",
+      "kind": "StringLiteral",
+      "offset": 1126,
       "length": 10,
       "value": "\"pinReset\""
     },
     {
       "filePath": "\/Users\/jenilk\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/mfa\/MfaTypes.swift",
       "kind": "StringLiteral",
-      "offset": 706,
+      "offset": 1182,
       "length": 15,
       "value": "\"authenticated\""
     },
     {
       "filePath": "\/Users\/jenilk\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/mfa\/MfaTypes.swift",
       "kind": "StringLiteral",
-      "offset": 759,
+      "offset": 1235,
       "length": 8,
       "value": "\"failed\""
     },
     {
       "filePath": "\/Users\/jenilk\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/mfa\/MfaTypes.swift",
       "kind": "Array",
-      "offset": 1764,
+      "offset": 3579,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/jenilk\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/mfa\/MfaTypes.swift",
       "kind": "Array",
-      "offset": 1793,
+      "offset": 5068,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/jenilk\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/mfa\/MfaTypes.swift",
+      "kind": "Array",
+      "offset": 5097,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/jenilk\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/mfa\/MfaTypes.swift",
       "kind": "BooleanLiteral",
-      "offset": 2590,
+      "offset": 5986,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/jenilk\/finvu-mobile\/finvu_ios_sdk\/finvu_ios_sdk\/Classes\/mfa\/MfaTypes.swift",
       "kind": "BooleanLiteral",
-      "offset": 2685,
+      "offset": 6081,
       "length": 5,
       "value": "false"
     },
